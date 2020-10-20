@@ -12,11 +12,11 @@ gcc -v
 
 ### Installation
 
+Download the latest online installer: [https://www.qt.io/download-open-source](https://www.qt.io/download-open-source)
+
 {% hint style="info" %}
 The installer name may differ depending of the version name
 {% endhint %}
-
-Download the latest online installer: [https://www.qt.io/download-open-source](https://www.qt.io/download-open-source)
 
 Make the installer an executable and launch it:
 
