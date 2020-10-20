@@ -1,3 +1,9 @@
+---
+description: >-
+  Here's how you need setup your development environment on Ubuntu 18.04 in
+  order to compile Skydel Plug-ins.
+---
+
 # Ubuntu 18.04
 
 ## GCC 7.5
