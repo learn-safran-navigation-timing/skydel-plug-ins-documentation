@@ -49,8 +49,6 @@ chmod +x ./qt-unified-linux-x64-3.2.3-online.run
 
 ![](../.gitbook/assets/install_qt_4.png)
 
-![](../.gitbook/assets/install_qt_8.png)
-
 ![](../.gitbook/assets/install_qt_5.png)
 
 Change the installation folder to _/opt/Qt:_
