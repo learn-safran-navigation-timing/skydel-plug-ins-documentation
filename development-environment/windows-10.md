@@ -75,6 +75,20 @@ Wait to the installation to end, it may take a while:
 
 ![](../.gitbook/assets/win_install_qt_11.png)
 
+![](../.gitbook/assets/win_install_qt_12.png)
+
+#### Configuration
+
+ Open Qt Creator, go to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit \(default\):_
+
+![](../.gitbook/assets/win_config_qt_1.png)
+
+Make sure to match the following:
+
+* Compiler
+  * C++: _Microsoft Visual C++ Compiler 15.9.28307.1274_
+* Qt version : _Qt 5.12.3 MSVC2017 64bit_
+
 ### Git
 
 Download the latest installer : [https://gitforwindows.org/](https://gitforwindows.org/)
