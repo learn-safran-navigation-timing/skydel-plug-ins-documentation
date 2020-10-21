@@ -137,7 +137,7 @@ Build output can be found in _skydel-plugin-ins / bin_ under the form of a dynam
 
 ![](../.gitbook/assets/win_compile_4.png)
 
-To make a compiled plug-in\(_.dll_ file\) available in Skydel, move it to _Skydel Data Folder / Plug-ins:_
+To make build output available in Skydel, move the _.dll_ file to _Skydel Data Folder / Plug-ins:_
 
 ![](../.gitbook/assets/win_compile_5.png)
 
