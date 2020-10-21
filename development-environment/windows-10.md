@@ -19,27 +19,27 @@ Make sure you download _Visual Studio Community 2017_
 
 Open the installer and select _Continue_
 
-![](../.gitbook/assets/window_install_vs_1.png)
+![](../.gitbook/assets/win_install_vs_1.png)
 
 Wait to the setup to end:
 
-![](../.gitbook/assets/window_install_vs_2.png)
+![](../.gitbook/assets/win_install_vs_2.png)
 
 In _Workloads_ select _Desktop development with C++_  then _Install:_
 
-![](../.gitbook/assets/window_install_vs_3.png)
+![](../.gitbook/assets/win_install_vs_3.png)
 
 Wait to the installation to end, it may take a while:
 
-![](../.gitbook/assets/window_install_vs_4.png)
+![](../.gitbook/assets/win_install_vs_4.png)
 
 Restart the computer:
 
-![](../.gitbook/assets/window_install_vs_5.png)
+![](../.gitbook/assets/win_install_vs_5.png)
 
 After the restart, open the _Visual Studio Installer_ and make sure _Visual Studio Community 2017_ has version _15.9.28_ or greater:
 
-![](../.gitbook/assets/window_install_vs_6.png)
+![](../.gitbook/assets/win_install_vs_6.png)
 
 ### Qt Open Source 5.12.3
 
