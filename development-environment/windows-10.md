@@ -22,15 +22,15 @@ Launch the installer:
 
 ![](../.gitbook/assets/win_install_qt_4.png)
 
-![](../.gitbook/assets/win_install_qt_6.png)
-
 ![](../.gitbook/assets/win_install_qt_5.png)
+
+![](../.gitbook/assets/win_install_qt_6.png)
 
 Select _MSVC 2017 64-bit_ under _Qt 5.12.3_ and make sure no option is selected in _Developer and Designer Tools_:
 
-![](../.gitbook/assets/win_install_qt_8.png)
-
 ![](../.gitbook/assets/win_install_qt_7.png)
+
+![](../.gitbook/assets/win_install_qt_8.png)
 
 ![](../.gitbook/assets/win_install_qt_9.png)
 
