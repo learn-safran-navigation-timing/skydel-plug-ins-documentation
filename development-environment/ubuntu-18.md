@@ -134,3 +134,9 @@ Go to Edit, right click on the root folder and select _Rebuild:_
 
 Build output can be found in _skydel-plugin-ins / bin_ under the form of a shared object \(e.g. libsimple\_plugin.so\)
 
+![](../.gitbook/assets/ub_compile_4.png)
+
+To make build output available in Skydel, move the _.so_ file to _Skydel Data Folder / Plug-ins:_
+
+![](../.gitbook/assets/ub_compile_5.png)
+
