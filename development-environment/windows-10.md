@@ -89,9 +89,9 @@ Make sure to match the following:
   * C++: _Microsoft Visual C++ Compiler 15.9.28307.1274_
 * Qt version : _Qt 5.12.3 MSVC2017 64bit_
 
-### Git
+### Git 2.29.0
 
-Download the latest installer : [https://gitforwindows.org/](https://gitforwindows.org/)
+Download the latest installer [here](https://gitforwindows.org/) and install Git.
 
 ## Compilation
 
