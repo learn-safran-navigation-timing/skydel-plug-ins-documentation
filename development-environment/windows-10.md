@@ -13,9 +13,29 @@ description: >-
 
 Download latest online installer: [https://visualstudio.microsoft.com/vs/older-downloads/](https://visualstudio.microsoft.com/vs/older-downloads/)
 
-Open the installer
+{% hint style="info" %}
+Make sure you download _Visual Studio Community 2017_
+{% endhint %}
 
-In _Workloads_ select _Desktop development with C++_
+Open the installer and select _Continue_
+
+![](../.gitbook/assets/window_install_vs_1.png)
+
+Wait to the setup to end:
+
+![](../.gitbook/assets/window_install_vs_2.png)
+
+In _Workloads_ select _Desktop development with C++_  then _Install:_
+
+![](../.gitbook/assets/window_install_vs_3.png)
+
+Wait to the installation to end, it may take a while:
+
+![](../.gitbook/assets/window_install_vs_4.png)
+
+Restart the computer:
+
+![](../.gitbook/assets/window_install_vs_5.png)
 
 ### Qt Open Source 5.12.3
 
