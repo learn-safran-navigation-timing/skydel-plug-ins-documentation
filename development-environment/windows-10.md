@@ -79,7 +79,7 @@ Wait to the installation to end, it may take a while:
 
 #### Configuration
 
- Open Qt Creator, go to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit \(default\):_
+Open Qt Creator, go to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit \(default\):_
 
 ![](../.gitbook/assets/win_config_qt_1.png)
 
@@ -94,4 +94,50 @@ Make sure to match the following:
 Download the latest installer [here](https://gitforwindows.org/) and install Git.
 
 ## Compilation
+
+#### Getting the Source Code
+
+The GitHub repository contains the Skydel Plug-ins SDK and some examples:
+
+```text
+git clone https://github.com/learn-orolia/skydel-plug-ins
+```
+
+**Updating the Souce Code**
+
+```text
+git pull
+```
+
+**Getting a Specific Version of the Source Code**
+
+{% hint style="info" %}
+Checkout this [page](https://github.com/learn-orolia/skydel-plug-ins/releases) for supported versions
+{% endhint %}
+
+```text
+git checkout VERSION
+```
+
+#### Compiling the Source Code
+
+Open Qt Creator, go to _File / Open File or Project..._ and select the project file located in _skydel-plug-ins / skydel\_plugin.pro_. Make sure the selected kit is _Desktop Qt 5.12.3 MSVC2017 64bit_ and select _Configure Project:_
+
+![](../.gitbook/assets/win_compile_1.png)
+
+Go to Projects, change _Edit build configuration_ for _Release_ and disable _Shadow build:_
+
+![](../.gitbook/assets/win_compile_2.png)
+
+Go to _Edit_, right click on the root folder and select _Rebuild_:
+
+![](../.gitbook/assets/win_compile_3.png)
+
+Build output can be found in _skydel-plugin-ins / bin_ under the form of a dynamic-link library \(e.g. simple\_plugin.lib\)
+
+![](../.gitbook/assets/win_compile_4.png)
+
+To make a compiled plug-in\(_.dll_ file\) available in Skydel, move it to _Skydel Data Folder / Plug-ins:_
+
+![](../.gitbook/assets/win_compile_5.png)
 
