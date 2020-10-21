@@ -8,7 +8,7 @@ You want to start working on your Skydel plug-in? Following the instructions on 
 
 Having trouble figuring out how plug-ins are integrated in Skydel? This [page ](plug-ins-in-skydel/using-plugins.md)explains it all.
 
-## Software Development Kit\(SDK\) and Examples on GitHub
+## SDK and Examples on GitHub
 
 The source code located on [GitHub](https://github.com/learn-orolia/skydel-plug-ins) includes the software development kit\(SDK\) and multiple plug-in examples.
 
