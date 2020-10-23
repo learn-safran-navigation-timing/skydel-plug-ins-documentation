@@ -10,10 +10,10 @@ A plug-in is a shared library \(_.so_ or _.dll_\) that implements some of the in
 
 ## How to make a plug-in available in Skydel?
 
-Make sure you move the plug-in in _Skydel Data Folder / Plug-ins._ At the start of Skydel a search is done in the previously mentioned folder in order to list all available plug-ins. 
+Make sure you copy the plug-in \(_.so_ or _.dll_\ file) into the  _Skydel Data Folder / Plug-ins._ When Skydel is launched, it will search that folder in order to list all the available plug-ins. 
 
 {% hint style="warning" %}
-The search is only done at the start of Skydel. Creating a new configuration won't trigger a search for new plug-ins
+The search is only done at the launch of Skydel. Creating a new configuration won't trigger a search for new plug-ins
 {% endhint %}
 
 ## How to instantiate a plug-in in Skydel?
