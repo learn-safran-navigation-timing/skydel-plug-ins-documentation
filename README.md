@@ -4,7 +4,7 @@ Welcome to the Skydel plug-ins documentation!
 
 Having a feature request for Skydel? Thinking you can do the work yourself? We got you, teaming up with Skydel has never been that easy! With the addition of the new plug-in framework, users can now develop features and integrate them into the Skydel user interface and real-time simulation engine.
 
-You want to start working on your Skydel plug-in? Following the instructions on how to setup the development environment on either [Ubuntu](development-environment/ubuntu-18.md) or [Windows](development-environment/windows-10.md).
+You want to start working on your Skydel plug-in? The first step is to follow the instructions on how to setup the development environment on either [Ubuntu](development-environment/ubuntu-18.md) or [Windows](development-environment/windows-10.md).
 
 Having trouble figuring out how plug-ins are integrated in Skydel? This [page ](plug-ins-in-skydel/using-plugins.md)explains it all.
 
