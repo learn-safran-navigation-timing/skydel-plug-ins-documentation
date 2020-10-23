@@ -105,6 +105,7 @@ git clone https://github.com/learn-orolia/skydel-plug-ins
 #### Updating the Souce Code
 
 ```text
+cd skydel-plug-ins
 git pull
 ```
 
