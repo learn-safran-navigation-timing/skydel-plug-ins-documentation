@@ -31,7 +31,7 @@ gcc -v
 Download the latest online installer: [https://www.qt.io/download-open-source](https://www.qt.io/download-open-source)
 
 {% hint style="info" %}
-The installer name may differ depending of the version name
+Look for _Download the Qt Online Installer_ at the bottom of the website
 {% endhint %}
 
 Make the installer an executable and launch it:
@@ -40,6 +40,10 @@ Make the installer an executable and launch it:
 chmod +x ./qt-unified-linux-x64-3.2.3-online.run
 ./qt-unified-linux-x64-3.2.3-online.run
 ```
+
+{% hint style="info" %}
+The installer name may differ depending of the version name
+{% endhint %}
 
 ![](../.gitbook/assets/install_qt_1.png)
 
@@ -116,6 +120,7 @@ Checkout this [page](https://github.com/learn-orolia/skydel-plug-ins/releases) f
 {% endhint %}
 
 ```text
+cd skydel-plug-ins
 git checkout VERSION
 ```
 

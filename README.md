@@ -14,7 +14,7 @@ The source code located on [GitHub](https://github.com/learn-orolia/skydel-plug-
 
 ## Contributing
 
-You want your plug-in to be featured in the Skydel Plug-ins GitHub repository? Send us a [pull request](https://github.com/learn-orolia/skydel-plug-ins)! 
+You want your plug-in to be featured in the Skydel Plug-ins GitHub repository? Send us a [pull request](https://github.com/learn-orolia/skydel-plug-ins)!
 
 ## Support
 

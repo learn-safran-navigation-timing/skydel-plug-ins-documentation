@@ -6,11 +6,11 @@ description: Here's how you can use plug-ins in Skydel.
 
 ## What is a plug-in for Skydel?
 
-A plug-in is a shared library \(_.so_ or _.dll_\) that implements some of the interfaces of the Skydel Plug-in SDK. 
+A plug-in is a shared library \(_.so_ or _.dll_\) that implements some of the interfaces of the Skydel Plug-in SDK.
 
 ## How to make a plug-in available in Skydel?
 
-Make sure you copy the plug-in \(_.so_ or _.dll_\ file) into the  _Skydel Data Folder / Plug-ins._ When Skydel is launched, it will search that folder in order to list all the available plug-ins. 
+Make sure you copy the plug-in \(_.so_ or _.dll_ file\) into the _Skydel Data Folder / Plug-ins._ When Skydel is launched, it will search that folder in order to list all the available plug-ins.
 
 {% hint style="warning" %}
 The search is only done at the launch of Skydel. Creating a new configuration won't trigger a search for new plug-ins

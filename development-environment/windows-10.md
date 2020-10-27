@@ -45,7 +45,11 @@ After the restart, open the _Visual Studio Installer_ and make sure _Visual Stud
 
 #### Installation
 
-Download the latest online installer: [https://www.qt.io/download-open-source](https://www.qt.io/download-open-source)
+Download the latest online installer: https://www.qt.io/download-open-source
+
+{% hint style="info" %}
+Look for _Download the Qt Online Installer_ at the bottom of the website
+{% endhint %}
 
 Launch the installer:
 
@@ -89,9 +93,13 @@ Make sure to match the following:
   * C++: _Microsoft Visual C++ Compiler 15.9.28307.1274_
 * Qt version : _Qt 5.12.3 MSVC2017 64bit_
 
-### Git 2.29.0
+### Git 2.29.1
 
-Download the latest installer [here](https://gitforwindows.org/) and install Git.
+Download the latest installer [here](https://gitforwindows.org/) and install Git. 
+
+{% hint style="info" %}
+Use default configuration settings during installation.
+{% endhint %}
 
 ## Compilation
 
@@ -106,6 +114,7 @@ git clone https://github.com/learn-orolia/skydel-plug-ins
 **Updating the Souce Code**
 
 ```text
+cd skydel-plug-ins
 git pull
 ```
 
@@ -116,6 +125,7 @@ Checkout this [page](https://github.com/learn-orolia/skydel-plug-ins/releases) f
 {% endhint %}
 
 ```text
+cd skydel-plug-ins
 git checkout VERSION
 ```
 
