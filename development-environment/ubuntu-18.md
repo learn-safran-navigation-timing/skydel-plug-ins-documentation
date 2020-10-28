@@ -13,7 +13,7 @@ description: >-
 
 ```text
 sudo apt-get update
-sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0
+sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev
 ```
 
 ### GCC 7.5
