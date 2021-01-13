@@ -82,7 +82,7 @@ During simulation, Skydel will send vehicle position data in _ecef_ at 1000 Hz v
 
 ### Dynamic User Interface
 
-During simulation initialization, Skydel will give a chance to plug-in instances to connect to their user interface for real-time updates via the `connectToView` method. The `QWidget*` parameter is the same the one created by the `createUI` method.
+During simulation initialization, Skydel will give a chance to plug-in instances to connect to their user interface for real-time updates via the `connectToView` method. The `QWidget*` parameter is the same as the one created by the `createUI` method.
 
 ### Example
 
