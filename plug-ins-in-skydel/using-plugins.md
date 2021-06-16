@@ -16,7 +16,7 @@ Make sure you copy the plug-in \(_.so_ or _.dll_ file\) into the _Skydel Data Fo
 The search is only done at the launch of Skydel. Creating a new configuration won't trigger a search for new plug-ins
 {% endhint %}
 
-![Skydel's Plug-in Search at Startup](../.gitbook/assets/plugin_search.png)
+![Skydel&apos;s Plug-in Search at Startup](../.gitbook/assets/plugin_search.png)
 
 ## How to instantiate a plug-in in Skydel?
 

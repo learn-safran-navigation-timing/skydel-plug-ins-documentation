@@ -12,15 +12,15 @@ During simulation initialization, Skydel will create a temporary folder for ever
 
 ### Graphical User Interface
 
-When instantiating a plug-in, Skydel asks for a `QWidget*` via the `createUI` method. The returned widget will be displayed in Skydel user interface under _Settings / Plug-ins / B / Plug-in UI_ where _B_ is the plug-in instance name. It's mandatory to fully give the ownership of the widget pointer to Skydel. 
+When instantiating a plug-in, Skydel asks for a `QWidget*` via the `createUI` method. The returned widget will be displayed in Skydel user interface under _Settings / Plug-ins / B / Plug-in UI_ where _B_ is the plug-in instance name. It's mandatory to fully give the ownership of the widget pointer to Skydel.
 
 ```cpp
 QWidget* B::createUI()
 {
     auto* ui = new QWidget{};
-    
+
     // connect signal/slots
-    
+
     return ui;
 }
 ```
@@ -45,7 +45,7 @@ void B::setNotifier(SkydelNotifierInterface* notifier)
 {
     // Sends an warning message to Skydel
     notifier->notify("Hello", SkydelNotifierInterface::Type::WARNING);
-    
+
     // Tells Skydel to change it' state to unsaved
     notifier->setDirty();
 }
@@ -118,13 +118,13 @@ See plug-in example skydel\_default\_instrumentation\_plugin. It covers:
 
 ## SkydelRapiInterface
 
-To facilitate the usage of the remote API by a plug-in, it's suggested to make the plug-in inherit  `SkydelRapiAccess` over `SkydelRapiInterface`. 
+To facilitate the usage of the remote API by a plug-in, it's suggested to make the plug-in inherit `SkydelRapiAccess` over `SkydelRapiInterface`.
 
 Using the remote API in a plug-in is the same as using the remote API in _python_, _C\#_ and _C++_ except that the connection to Skydel is already handled since the plug-in can talk directly to the Skydel engine.
 
 ### Posting Commands
 
-At anytime, a plug-in instance can send a command with the `post` method. It's possible to add a timestamp when calling `post` in order to delay the execution of the command during simulation. It's also possible to add a function callback that will contain the command execution result. 
+At anytime, a plug-in instance can send a command with the `post` method. It's possible to add a timestamp when calling `post` in order to delay the execution of the command during simulation. It's also possible to add a function callback that will contain the command execution result.
 
 ### Example
 

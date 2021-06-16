@@ -25,7 +25,7 @@ Wait to the setup to end:
 
 ![](../.gitbook/assets/win_install_vs_2.png)
 
-In _Workloads_ select _Desktop development with C++_  then _Install:_
+In _Workloads_ select _Desktop development with C++_ then _Install:_
 
 ![](../.gitbook/assets/win_install_vs_3.png)
 
@@ -45,7 +45,7 @@ After the restart, open the _Visual Studio Installer_ and make sure _Visual Stud
 
 #### Installation
 
-Download the latest online installer: https://www.qt.io/download-open-source
+Download the latest online installer: [https://www.qt.io/download-open-source](https://www.qt.io/download-open-source)
 
 {% hint style="info" %}
 Look for _Download the Qt Online Installer_ at the bottom of the website
@@ -95,7 +95,7 @@ Make sure to match the following:
 
 ### Git 2.29.1
 
-Download the latest installer [here](https://gitforwindows.org/) and install Git. 
+Download the latest installer [here](https://gitforwindows.org/) and install Git.
 
 {% hint style="info" %}
 Use default configuration settings during installation.
