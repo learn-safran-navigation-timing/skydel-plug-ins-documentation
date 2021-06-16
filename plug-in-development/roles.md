@@ -111,7 +111,7 @@ During simulation, Skydel will send statistics about which module is throttling 
 
 ### Example
 
-See plug-in example skydel\_default\_instrumentation\_plugin. It covers:
+See plug-in example [skydel\_default\_instrumentation\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/skydel_default_instrumentation_plugin). It covers:
 
 * Generating a _.dot_ file with the graph data
 * Logging Skydel engine queue size
@@ -128,7 +128,7 @@ At anytime, a plug-in instance can send a command with the `post` method. It's p
 
 ### Example
 
-See plug-in example rapi\_plugin. It covers:
+See plug-in example [rapi\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/rapi_plugin). It covers:
 
 * Inheriting `SkydelRapiAccess` to facilitate `post` call
 * Posting commands to Skydel
