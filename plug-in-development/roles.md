@@ -4,6 +4,35 @@ description: Here's the description of every role supported by Skydel.
 
 # Roles
 
+```cpp
+  GPS_L1_PCODE,
+  GPS_L2_PCODE,
+  GPS_L1_MCODE,
+  GPS_L2_MCODE,
+  GPS_L5,
+  GLONASS_G1,
+  GLONASS_G2,
+  GALILEO_E1,
+  GALILEO_E1_PRS,
+  GALILEO_E5a,
+  GALILEO_E5b,
+  GALILEO_E5ALTBOC,
+  GALILEO_E6,
+  GALILEO_E6_PRS,
+  BEIDOU_B1,
+  BEIDOU_B2,
+  BEIDOU_B1C,
+  BEIDOU_B2a,
+  SBAS_L1,
+  SBAS_L5,
+  QZSS_L1_CA,
+  QZSS_L1C,
+  QZSS_L5,
+  QZSS_L1S,
+  QZSS_L5S,
+  NAVIC_L5)
+```
+
 ## SkydelCoreInterface
 
 ### Runtime Logging
@@ -93,6 +122,80 @@ See plug-in example [position\_observer\_plugin](https://github.com/learn-orolia
 * Logging in the temporary folder
 * Sending position data on the network
 
+## SkydelRawDataObserverInterface
+
+### Real Time Raw Data
+
+During simulation initialization, Skydel will ask for a `SkydelRuntimeRawDataObserver*` from every plug-in instance via the `createRuntimeRawDataObserver` method. It's mandatory to fully give the ownership of the returned pointer to Skydel.
+
+During simulation, Skydel will send raw data at 1 Hz via the `pushRawData` method for every signal of every space vehicle of every constellation that is currently being simulated with the following data structure:
+
+| TimedRawData | Definition | Unit |
+| :--- | :--- | :--- |
+| elapsedTimeMs | Simulation elapsed time | millisecond |
+| svsData | Raw data by constellation | vector of `ConstellationRawData` |
+
+| ConstellationRawData | Definition | Unit |
+| :--- | :--- | :--- |
+| system | Constellation identifier | integer\(see table bellow\) |
+| svs | Raw data by space vehicle | vector of `SVRawData` |
+
+```cpp
+0. GPS
+1. GLONASS
+2. GALILEO
+3. BEIDOU
+4. SBAS
+5. QZSS
+6. NAVIC
+```
+
+| SVRawData | Definition | Unit |
+| :--- | :--- | :--- |
+| svID | Space vehicle identifier | - |
+| rawDatas | Raw data by signal | vector of `SignalRawData` |
+
+| SignalRawData | Definition | Unit |
+| :--- | :--- | :--- |
+| signal | Signal identifier | integer\(see mapping bellow\) |
+| svElapsedTimeMs | Elapsed time of the SV at current simulation elapsed time | millisecond |
+| pseudorange | Pseudorange | meter |
+| adr | Accumulated doppler range | number of cycle |
+
+```cpp
+Signal mapping from integer:
+0. GPS_L1_PCODE
+1. GPS_L2_PCODE
+2. GPS_L1_MCODE
+3. GPS_L2_MCODE
+4. GPS_L5
+5. GLONASS_G1
+6. GLONASS_G2
+7. GALILEO_E1
+8. GALILEO_E1_PRS
+9. GALILEO_E5a
+10. GALILEO_E5b
+11. GALILEO_E5ALTBOC
+12. GALILEO_E6
+13. GALILEO_E6_PRS
+14. BEIDOU_B1
+15. BEIDOU_B2
+16. BEIDOU_B1C
+17. BEIDOU_B2a
+18. SBAS_L1
+19. SBAS_L5
+20. QZSS_L1_CA
+21. QZSS_L1C
+22. QZSS_L5
+23. QZSS_L1S
+24. QZSS_L5S
+25. NAVIC_L5
+```
+
+### Dynamic User Interface
+
+Same as `SkydelPositionObsereverInterface`, see [here](roles.md#dynamic-user-interface) for more detail.
+
 ## SkydelHilObserverInterface
 
 ### HIL Interface Received Positions
@@ -103,7 +206,7 @@ During the simulation, Skydel will send the HIL positions in _ecef_ format as th
 
 ### Dynamic User Interface 
 
-During simulation initialization, Skydel will allow the plug-in instances to connect to their user interface for real-time updates via the `connectToView` method. The `QWidget*` parameter is the same as the one created by the `createUI` method.
+Same as `SkydelPositionObsereverInterface`, see [here](roles.md#dynamic-user-interface) for more detail.
 
 ### Example
 
