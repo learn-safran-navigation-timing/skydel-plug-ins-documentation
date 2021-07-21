@@ -93,6 +93,26 @@ See plug-in example [position\_observer\_plugin](https://github.com/learn-orolia
 * Logging in the temporary folder
 * Sending position data on the network
 
+## SkydelHilObserverInterface
+
+### HIL Interface Received Positions
+
+During simulation initialization, Skydel will ask for a `SkydelRuntimeHilObserver*` from every plug-in instance via the `createRuntimeHilObserver` method. It is mandatory to give full ownership of the returned pointer to Skydel.
+
+During the simulation, Skydel will send the HIL positions in _ecef_ format as they are received using the `pushHilInput` method. The position will be received in the same data structure as the real time positions of `SkydelPositionObsereverInterface` presented [here](roles.md#skydelpositionobserverinterface).
+
+### Dynamic User Interface 
+
+During simulation initialization, Skydel will allow the plug-in instances to connect to their user interface for real-time updates via the `connectToView` method. The `QWidget*` parameter is the same as the one created by the `createUI` method.
+
+### Example
+
+See plug-in example [hil\_observer_\__plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/hil_observer_plugin). It covers:
+
+* Receiving HIL data in real time
+* Updating the user interface
+* Logging in the temporary folder
+
 ## SkydelLicensingInterface
 
 {% hint style="warning" %}
