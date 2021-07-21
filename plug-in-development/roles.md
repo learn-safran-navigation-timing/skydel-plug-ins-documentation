@@ -4,35 +4,6 @@ description: Here's the description of every role supported by Skydel.
 
 # Roles
 
-```cpp
-  GPS_L1_PCODE,
-  GPS_L2_PCODE,
-  GPS_L1_MCODE,
-  GPS_L2_MCODE,
-  GPS_L5,
-  GLONASS_G1,
-  GLONASS_G2,
-  GALILEO_E1,
-  GALILEO_E1_PRS,
-  GALILEO_E5a,
-  GALILEO_E5b,
-  GALILEO_E5ALTBOC,
-  GALILEO_E6,
-  GALILEO_E6_PRS,
-  BEIDOU_B1,
-  BEIDOU_B2,
-  BEIDOU_B1C,
-  BEIDOU_B2a,
-  SBAS_L1,
-  SBAS_L5,
-  QZSS_L1_CA,
-  QZSS_L1C,
-  QZSS_L5,
-  QZSS_L1S,
-  QZSS_L5S,
-  NAVIC_L5)
-```
-
 ## SkydelCoreInterface
 
 ### Runtime Logging
@@ -137,10 +108,11 @@ During simulation, Skydel will send raw data at 1 Hz via the `pushRawData` metho
 
 | ConstellationRawData | Definition | Unit |
 | :--- | :--- | :--- |
-| system | Constellation identifier | integer\(see table bellow\) |
+| system | Constellation identifier | integer\(see mapping bellow\) |
 | svs | Raw data by space vehicle | vector of `SVRawData` |
 
 ```cpp
+System mapping:
 0. GPS
 1. GLONASS
 2. GALILEO
@@ -163,7 +135,7 @@ During simulation, Skydel will send raw data at 1 Hz via the `pushRawData` metho
 | adr | Accumulated doppler range | number of cycle |
 
 ```cpp
-Signal mapping from integer:
+Signal mapping:
 0. GPS_L1_PCODE
 1. GPS_L2_PCODE
 2. GPS_L1_MCODE
