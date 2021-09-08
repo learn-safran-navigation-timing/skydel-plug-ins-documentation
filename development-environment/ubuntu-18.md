@@ -63,8 +63,6 @@ Select _Desktop gcc 64-bit_ under _Qt 5.12.3_ and make sure no option is selecte
 
 ![](../.gitbook/assets/install_qt_7.png)
 
-![](../.gitbook/assets/install_qt_8.png)
-
 ![](../.gitbook/assets/install_qt_9.png)
 
 Wait to the installation to end, it may take a while:

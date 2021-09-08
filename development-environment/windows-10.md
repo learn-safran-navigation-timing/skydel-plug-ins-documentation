@@ -7,37 +7,39 @@ description: >-
 
 # Windows 10
 
-## Prerequisites
+## Windows 10
 
-### Visual Studio Build Tools 2017
+### Prerequisites
+
+#### Visual Studio Build Tools 2017
 
 Go to the _Visual Studio 2017 and other Products_ download page with the link [here](https://visualstudio.microsoft.com/vs/older-downloads/):
 
-![](../.gitbook/assets/windows/install_vs_1.png)
+![](../.gitbook/assets/install_vs_1.png)
 
 Download _Build Tools for Visual Studio 2017 \(version 15.9\)_:
 
-![](../.gitbook/assets/windows/install_vs_2.png)
+![](../.gitbook/assets/install_vs_2.png)
 
 Open the installer and select _Continue_:
 
-![](../.gitbook/assets/windows/install_vs_3.png)
+![](../.gitbook/assets/install_vs_3.png)
 
 Wait for the setup to end:
 
-![](../.gitbook/assets/windows/install_vs_4.png)
+![](../.gitbook/assets/install_vs_4.png)
 
 In _Workloads_ select _Visual C++ build tools_ then _Install:_
 
-![](../.gitbook/assets/windows/install_vs_5.png)
+![](../.gitbook/assets/install_vs_5.png)
 
 Wait for installation to end, it may take a while:
 
-![](../.gitbook/assets/windows/install_vs_6.png)
+![](../.gitbook/assets/install_vs_6.png)
 
-### Qt Open Source 5.12.3
+#### Qt Open Source 5.12.3
 
-#### Installation
+**Installation**
 
 Download the latest online installer [here](https://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe).
 
@@ -45,25 +47,19 @@ Update installer name, email\(_QT\_EMAIL_\) and password\(_QT\_PW_\) accordingly
 
 ```aspnet
 .\qt-unified-windows-x86-4.1.1-online.exe install qt.qt5.5123.win64_msvc2017_64 qt.tools.cmake.win64 qt.tools.qtcreator `
-	--root C:\Qt `
-	--auto-answer telemetry-question=No --accept-licenses --default-answer --accept-obligations --confirm-command `
-	--email QT_EMAIL `
-	--pw QT_PW
+    --root C:\Qt `
+    --auto-answer telemetry-question=No --accept-licenses --default-answer --accept-obligations --confirm-command `
+    --email QT_EMAIL `
+    --pw QT_PW
 ```
 
 To validate installation, open Qt Creator, go to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit \(default\)_, and make sure it looks like the screenshot below:
-
-<<<<<<< HEAD
-![](../.gitbook/assets/windows/config_qt_1.png)
-=======
-![](../.gitbook/assets/win_config_qt_1%20%281%29.png)
->>>>>>> e68790b40178bb65fba49975255a9a8adb5b15a6
 
 {% hint style="info" %}
 The C and C++ compiler version might be slightly different.
 {% endhint %}
 
-### Git 2.29.1
+#### Git 2.29.1
 
 Download the latest installer [here](https://gitforwindows.org/) and install Git.
 
@@ -71,9 +67,9 @@ Download the latest installer [here](https://gitforwindows.org/) and install Git
 Use default configuration settings during installation.
 {% endhint %}
 
-## Compilation
+### Compilation
 
-#### Getting the Source Code
+**Getting the Source Code**
 
 The GitHub repository contains the Skydel Plug-ins SDK and some examples:
 
@@ -99,25 +95,25 @@ cd skydel-plug-ins
 git checkout VERSION
 ```
 
-#### Compiling the Source Code
+**Compiling the Source Code**
 
 Open Qt Creator, go to _File / Open File or Project..._ and select the project file located in _skydel-plug-ins / skydel\_plugin.pro_. Make sure the selected kit is _Desktop Qt 5.12.3 MSVC2017 64bit_ and select _Configure Project:_
 
-![](../.gitbook/assets/windows/compile_1.png)
+![](../.gitbook/assets/compile_1.png)
 
 Go to Projects, change _Edit build configuration_ for _Release_ and disable _Shadow build:_
 
-![](../.gitbook/assets/windows/compile_2.png)
+![](../.gitbook/assets/compile_2.png)
 
 Go to _Edit_, right click on the root folder and select _Rebuild_:
 
-![](../.gitbook/assets/windows/compile_3.png)
+![](../.gitbook/assets/compile_3.png)
 
 Build output can be found in _skydel-plugin-ins / bin_ under the form of a dynamic-link library \(e.g. simple\_plugin.lib\)
 
-![](../.gitbook/assets/windows/compile_4.png)
+![](../.gitbook/assets/compile_4.png)
 
 To make build output available in Skydel, move the _.dll_ file to _Skydel Data Folder / Plug-ins:_
 
-![](../.gitbook/assets/windows/compile_5.png)
+![](../.gitbook/assets/compile_5.png)
 
