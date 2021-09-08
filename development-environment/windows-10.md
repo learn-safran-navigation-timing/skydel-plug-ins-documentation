@@ -39,7 +39,7 @@ Wait for installation to end, it may take a while:
 
 #### **Installation**
 
-Download the latest online installer [here](https://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe).
+Download the latest windows online installer [here](https://download.qt.io/official_releases/online_installers/).
 
 Update installer name, email\(_QT\_EMAIL_\) and password\(_QT\_PW_\) accordingly, then launch the installation:
 
