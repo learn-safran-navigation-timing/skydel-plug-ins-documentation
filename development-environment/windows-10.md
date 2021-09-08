@@ -13,27 +13,27 @@ description: >-
 
 Go to the _Visual Studio 2017 and other Products_ download page with the link [here](https://visualstudio.microsoft.com/vs/older-downloads/):
 
-![](../.gitbook/assets/win_install_vs_7.png)
+![](../.gitbook/assets/windows/install_vs_1.png)
 
 Download _Build Tools for Visual Studio 2017 \(version 15.9\)_:
 
-![](../.gitbook/assets/win_install_vs_8.png)
+![](../.gitbook/assets/windows/install_vs_2.png)
 
 Open the installer and select _Continue_:
 
-![](../.gitbook/assets/win_install_vs_1.png)
+![](../.gitbook/assets/windows/install_vs_3.png)
 
 Wait for the setup to end:
 
-![](../.gitbook/assets/win_install_vs_2.png)
+![](../.gitbook/assets/windows/install_vs_4.png)
 
 In _Workloads_ select _Visual C++ build tools_ then _Install:_
 
-![](../.gitbook/assets/win_install_vs_3.png)
+![](../.gitbook/assets/windows/install_vs_5.png)
 
 Wait for installation to end, it may take a while:
 
-![](../.gitbook/assets/win_install_vs_4.png)
+![](../.gitbook/assets/windows/install_vs_6.png)
 
 ### Qt Open Source 5.12.3
 
@@ -53,7 +53,7 @@ Update installer name, email\(_QT\_EMAIL_\) and password\(_QT\_PW_\) accordingly
 
 To validate installation, open Qt Creator, go to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit \(default\)_, and make sure it looks like the screenshot below:
 
-![](../.gitbook/assets/win_install_qt_1%20%281%29.png)
+![](../.gitbook/assets/windows/config_qt_1.png)
 
 {% hint style="info" %}
 The C and C++ compiler version might be slightly different.
@@ -99,21 +99,21 @@ git checkout VERSION
 
 Open Qt Creator, go to _File / Open File or Project..._ and select the project file located in _skydel-plug-ins / skydel\_plugin.pro_. Make sure the selected kit is _Desktop Qt 5.12.3 MSVC2017 64bit_ and select _Configure Project:_
 
-![](../.gitbook/assets/win_compile_1.png)
+![](../.gitbook/assets/windows/compile_1.png)
 
 Go to Projects, change _Edit build configuration_ for _Release_ and disable _Shadow build:_
 
-![](../.gitbook/assets/win_compile_2.png)
+![](../.gitbook/assets/windows/compile_2.png)
 
 Go to _Edit_, right click on the root folder and select _Rebuild_:
 
-![](../.gitbook/assets/win_compile_3.png)
+![](../.gitbook/assets/windows/compile_3.png)
 
 Build output can be found in _skydel-plugin-ins / bin_ under the form of a dynamic-link library \(e.g. simple\_plugin.lib\)
 
-![](../.gitbook/assets/win_compile_4.png)
+![](../.gitbook/assets/windows/compile_4.png)
 
 To make build output available in Skydel, move the _.dll_ file to _Skydel Data Folder / Plug-ins:_
 
-![](../.gitbook/assets/win_compile_5.png)
+![](../.gitbook/assets/windows/compile_5.png)
 
