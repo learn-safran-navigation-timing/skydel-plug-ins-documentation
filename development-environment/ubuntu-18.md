@@ -31,14 +31,17 @@ gcc -v
 Update the email\(_QT\_EMAIL_\) and password\(_QT\_PW_\) accordingly, then launch the installation:
 
 ```text
-wget https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -O /tmp/qt-installer.run && \
-	chmod +x /tmp/qt-installer.run && \ 
-	/tmp/qt-installer.run install qt.qt5.5123.gcc_64 qt.tools.cmake.gcc_64 qt.tools.qtcreator \
-		--root C:\Qt \
-		--auto-answer telemetry-question=No --accept-licenses --default-answer --accept-obligations --confirm-command \
-		--email QT_EMAIL \
-		--pw QT_PW
-	rm /tmp/qt-installer.run
+wget https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -O /tmp/qt-installer.run
+
+chmod +x /tmp/qt-installer.run
+
+sudo /tmp/qt-installer.run install qt.qt5.5123.gcc_64 qt.tools.cmake qt.tools.qtcreator \
+	--root /opt/Qt \
+	--auto-answer telemetry-question=No --accept-licenses --default-answer --accept-obligations --confirm-command \
+	--email QT_EMAIL \
+	--pw QT_PW
+
+rm /tmp/qt-installer.run
 ```
 
 {% hint style="warning" %}
