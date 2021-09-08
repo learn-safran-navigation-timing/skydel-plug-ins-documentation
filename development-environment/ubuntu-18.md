@@ -126,15 +126,15 @@ git checkout VERSION
 
 Open Qt Creator, go to _File / Open File or Project..._ and select the project file located in _skydel-plug-ins / skydel\_plugin.pro_. Make sure the selected kit is _Desktop Qt 5.12.3 QCC 64bit_ and select _Configure Project:_
 
-![](../.gitbook/assets/compile_ubuntu_1.png)
+![](../.gitbook/assets/ub_compile_1.png)
 
 Go to Projects, change _Edit build configuration_ for _Release_ and disable _Shadow build:_
 
-![](../.gitbook/assets/compile_ubuntu_2.png)
+![](../.gitbook/assets/ub_compile_2.png)
 
 Go to Edit, right click on the root folder and select _Rebuild:_
 
-![](../.gitbook/assets/compile_ubuntu_3.png)
+![](../.gitbook/assets/ub_compile_3.png)
 
 Build output can be found in _skydel-plugin-ins / bin_ under the form of a shared object \(e.g. libsimple\_plugin.so\)
 
