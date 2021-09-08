@@ -9,89 +9,55 @@ description: >-
 
 ## Prerequisites
 
-### Microsoft Visual Studio 2017 Community 15.9.28 for Windows Desktop
+### Visual Studio Build Tools 2017
 
-Download latest online installer: [https://visualstudio.microsoft.com/vs/older-downloads/](https://visualstudio.microsoft.com/vs/older-downloads/)
+Go to the _Visual Studio 2017 and other Products_ download page with the link [here](https://visualstudio.microsoft.com/vs/older-downloads/):
 
-{% hint style="info" %}
-Make sure you download _Visual Studio Community 2017_
-{% endhint %}
+![](../.gitbook/assets/win_install_vs_7.png)
 
-Open the installer and select _Continue_
+Download _Build Tools for Visual Studio 2017 \(version 15.9\)_:
+
+![](../.gitbook/assets/win_install_vs_8.png)
+
+Open the installer and select _Continue_:
 
 ![](../.gitbook/assets/win_install_vs_1.png)
 
-Wait to the setup to end:
+Wait for the setup to end:
 
 ![](../.gitbook/assets/win_install_vs_2.png)
 
-In _Workloads_ select _Desktop development with C++_ then _Install:_
+In _Workloads_ select _Visual C++ build tools_ then _Install:_
 
 ![](../.gitbook/assets/win_install_vs_3.png)
 
-Wait to the installation to end, it may take a while:
+Wait for installation to end, it may take a while:
 
 ![](../.gitbook/assets/win_install_vs_4.png)
-
-Restart the computer:
-
-![](../.gitbook/assets/win_install_vs_5.png)
-
-After the restart, open the _Visual Studio Installer_ and make sure _Visual Studio Community 2017_ has version _15.9.28_ or greater:
-
-![](../.gitbook/assets/win_install_vs_6.png)
 
 ### Qt Open Source 5.12.3
 
 #### Installation
 
-Download the latest online installer: [https://www.qt.io/download-open-source](https://www.qt.io/download-open-source)
+Download the latest online installer [here](https://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe).
+
+Update installer name, email\(_QT\_EMAIL_\) and password\(_QT\_PW_\) accordingly, then launch the installation:
+
+```aspnet
+.\qt-unified-windows-x86-4.1.1-online.exe install qt.qt5.5123.win64_msvc2017_64 qt.tools.cmake.win64 qt.tools.qtcreator `
+	--root C:\Qt `
+	--auto-answer telemetry-question=No --accept-licenses --default-answer --accept-obligations --confirm-command `
+	--email QT_EMAIL `
+	--pw QT_PW
+```
+
+To validate installation, open Qt Creator, go to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit \(default\)_, and make sure it looks like the screenshot below:
+
+![](../.gitbook/assets/win_install_qt_1%20%281%29.png)
 
 {% hint style="info" %}
-Look for _Download the Qt Online Installer_ at the bottom of the website
+The C and C++ compiler version might be slightly different.
 {% endhint %}
-
-Launch the installer:
-
-![](../.gitbook/assets/win_install_qt_1.png)
-
-![](../.gitbook/assets/win_install_qt_2.png)
-
-![](../.gitbook/assets/win_install_qt_3.png)
-
-![](../.gitbook/assets/win_install_qt_4.png)
-
-![](../.gitbook/assets/win_install_qt_5.png)
-
-![](../.gitbook/assets/win_install_qt_6.png)
-
-Select _MSVC 2017 64-bit_ under _Qt 5.12.3_ and make sure no option is selected in _Developer and Designer Tools_:
-
-![](../.gitbook/assets/win_install_qt_7.png)
-
-![](../.gitbook/assets/win_install_qt_8.png)
-
-![](../.gitbook/assets/win_install_qt_9.png)
-
-![](../.gitbook/assets/win_install_qt_10.png)
-
-Wait to the installation to end, it may take a while:
-
-![](../.gitbook/assets/win_install_qt_11.png)
-
-![](../.gitbook/assets/win_install_qt_12.png)
-
-#### Configuration
-
-Open Qt Creator, go to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit \(default\):_
-
-![](../.gitbook/assets/win_config_qt_1.png)
-
-Make sure to match the following:
-
-* Compiler
-  * C++: _Microsoft Visual C++ Compiler 15.9.28307.1274_
-* Qt version : _Qt 5.12.3 MSVC2017 64bit_
 
 ### Git 2.29.1
 
