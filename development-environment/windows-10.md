@@ -53,7 +53,7 @@ Update installer name, email\(_QT\_EMAIL_\) and password\(_QT\_PW_\) accordingly
 
 To validate installation, open Qt Creator, go to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit \(default\)_, and make sure it looks like the screenshot below:
 
-![](../.gitbook/assets/win_install_qt_1%20%281%29.png)
+![](../.gitbook/assets/win_config_qt_1%20%281%29.png)
 
 {% hint style="info" %}
 The C and C++ compiler version might be slightly different.
