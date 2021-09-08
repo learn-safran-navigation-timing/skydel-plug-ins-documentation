@@ -7,11 +7,9 @@ description: >-
 
 # Windows 10
 
-## Windows 10
+## Prerequisites
 
-### Prerequisites
-
-#### Visual Studio Build Tools 2017
+### Visual Studio Build Tools 2017
 
 Go to the _Visual Studio 2017 and other Products_ download page with the link [here](https://visualstudio.microsoft.com/vs/older-downloads/):
 
@@ -37,9 +35,9 @@ Wait for installation to end, it may take a while:
 
 ![](../.gitbook/assets/install_vs_6.png)
 
-#### Qt Open Source 5.12.3
+### Qt Open Source 5.12.3
 
-**Installation**
+#### **Installation**
 
 Download the latest online installer [here](https://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe).
 
@@ -61,7 +59,7 @@ To validate installation, open Qt Creator, go to _Tools / Options... / Kits_ and
 The C and C++ compiler version might be slightly different.
 {% endhint %}
 
-#### Git 2.29.1
+### Git 2.29.1
 
 Download the latest installer [here](https://gitforwindows.org/) and install Git.
 
@@ -69,9 +67,9 @@ Download the latest installer [here](https://gitforwindows.org/) and install Git
 Use default configuration settings during installation.
 {% endhint %}
 
-### Compilation
+## Compilation
 
-**Getting the Source Code**
+### **Getting the Source Code**
 
 The GitHub repository contains the Skydel Plug-ins SDK and some examples:
 
@@ -97,7 +95,7 @@ cd skydel-plug-ins
 git checkout VERSION
 ```
 
-**Compiling the Source Code**
+### **Compiling the Source Code**
 
 Open Qt Creator, go to _File / Open File or Project..._ and select the project file located in _skydel-plug-ins / skydel\_plugin.pro_. Make sure the selected kit is _Desktop Qt 5.12.3 MSVC2017 64bit_ and select _Configure Project:_
 
