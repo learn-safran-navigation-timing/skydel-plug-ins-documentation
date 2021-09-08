@@ -55,7 +55,7 @@ Update installer name, email\(_QT\_EMAIL_\) and password\(_QT\_PW_\) accordingly
 
 To validate installation, open Qt Creator, go to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit \(default\)_, and make sure it looks like the screenshot below:
 
-![](../.gitbook/assets/config_qt_1%20%281%29.png)
+![](../.gitbook/assets/win_config_qt_1.png)
 
 {% hint style="info" %}
 The C and C++ compiler version might be slightly different.
@@ -101,21 +101,21 @@ git checkout VERSION
 
 Open Qt Creator, go to _File / Open File or Project..._ and select the project file located in _skydel-plug-ins / skydel\_plugin.pro_. Make sure the selected kit is _Desktop Qt 5.12.3 MSVC2017 64bit_ and select _Configure Project:_
 
-![](../.gitbook/assets/compile_1.png)
+![](../.gitbook/assets/win_compile_1.png)
 
 Go to Projects, change _Edit build configuration_ for _Release_ and disable _Shadow build:_
 
-![](../.gitbook/assets/compile_2.png)
+![](../.gitbook/assets/win_compile_2.png)
 
 Go to _Edit_, right click on the root folder and select _Rebuild_:
 
-![](../.gitbook/assets/compile_3.png)
+![](../.gitbook/assets/win_compile_3.png)
 
 Build output can be found in _skydel-plugin-ins / bin_ under the form of a dynamic-link library \(e.g. simple\_plugin.lib\)
 
-![](../.gitbook/assets/compile_4.png)
+![](../.gitbook/assets/win_compile_4.png)
 
 To make build output available in Skydel, move the _.dll_ file to _Skydel Data Folder / Plug-ins:_
 
-![](../.gitbook/assets/compile_5.png)
+![](../.gitbook/assets/win_compile_5.png)
 
