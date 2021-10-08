@@ -1,5 +1,5 @@
 ---
-description: Here's the description of every role supported by Skydel.
+description: This section contains a description of every role supported by Skydel.
 ---
 
 # Roles
@@ -8,11 +8,11 @@ description: Here's the description of every role supported by Skydel.
 
 ### Runtime Logging
 
-During simulation initialization, Skydel will create a temporary folder for every plug-in instance. Existing folders will be wiped. Plug-in instances can access this path via the `setLogPath` method. The path have the following format: _Skydel Data Folder / Output / A / B_ where _A_ is the configuration name and _B_ the plug-in instance name.
+During simulation initialization, Skydel will create a temporary folder for every plug-in instance. Existing folders will be wiped. Plug-in instances can access this path via the `setLogPath` method. The path has the following format: _Skydel Data Folder / Output / A / B_ where _A_ is the configuration name and _B_ the plug-in instance name.
 
 ### Graphical User Interface
 
-When instantiating a plug-in, Skydel asks for a `QWidget*` via the `createUI` method. The returned widget will be displayed in Skydel user interface under _Settings / Plug-ins / B / Plug-in UI_ where _B_ is the plug-in instance name. It's mandatory to fully give the ownership of the widget pointer to Skydel.
+When instantiating a plug-in, Skydel asks for a `QWidget*` via the `createUI` method. The returned widget will be displayed in the Skydel user interface under _Settings / Plug-ins / B / Plug-in UI_ where _B_ is the plug-in instance name. It's mandatory to fully give the ownership of the widget pointer to Skydel.
 
 ```cpp
 QWidget* B::createUI()
@@ -29,8 +29,8 @@ QWidget* B::createUI()
 
 When instantiating a plug-in, Skydel will create and give a `SkydelNotifierInterface*` for every plug-in instance via the `setNotifier` method. With this object, a plug-in instance can:
 
-* Send 3 different type of notification to Skydel via the `notify` method
-* Tell Skydel to change it's state to unsaved via the `setDirty` method
+* Send 3 different types of notifications to Skydel via the `notify` method
+* Tell Skydel to change its state to Unsaved via the `setDirty` method
 
 | Type | Description |
 | :--- | :--- |
@@ -53,17 +53,17 @@ void B::setNotifier(SkydelNotifierInterface* notifier)
 
 ### Configuration
 
-When saving, Skydel will demand a `QJsonObject` to every plug-in instance via the `getConfiguration` method. The JSON object holds the current configuration of the plug-in instance, which will be saved in the Skydel configuration file paired with the version of the plug-in instance it was generated with. The version saved in the Skydel configuration file comes from the plug-in instance metadata at save time.
+When saving, Skydel will demand a `QJsonObject` to every plug-in instance via the `getConfiguration` method. The JSON object holds the current configuration of the plug-in instance, which will be saved in the Skydel configuration file and paired with the version of the plug-in instance it was generated with. The version saved in the Skydel configuration file comes from the plug-in instance metadata at save time.
 
-When loading a configuration file, Skydel will automatically instantiate all saved plug-in instance and restore their configuration via the `setConfiguration` method. It's possible for a plug-in instance to handle configuration backward compatibility since the configuration received is paired with a creation version.
+When loading a configuration file, Skydel will automatically instantiate all saved plug-in instances and restore their configuration via the `setConfiguration` method. It's possible for a plug-in instance to handle configuration backward compatibility since the configuration received is paired with a creation version.
 
 ### Example
 
-See plug-in example [simple\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/simple_plugin). It covers:
+See the plug-in example [simple\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/simple_plugin) for more information. It covers:
 
 * Creating a user interface
 * Sending notification messages
-* Triggering the unsaved state
+* Triggering the Unsaved state
 * Saving and loading of configuration
 
 ## SkydelPositionObserverInterface
@@ -72,7 +72,7 @@ See plug-in example [simple\_plugin](https://github.com/learn-orolia/skydel-plug
 
 During simulation initialization, Skydel will ask for a `SkydelRuntimePositionObserver*` from every plug-in instance via the `createRuntimePositionObserver` method. It's mandatory to fully give the ownership of the returned pointer to Skydel.
 
-During simulation, Skydel will send vehicle position data in _ecef_ at 1000 Hz via the `pushPosition` method with the following data structure:
+During simulation, Skydel will send the vehicle position data in _ecef_ at 1000 Hz via the `pushPosition` method with the following data structure:
 
 | TimedPosition | Unit |
 | :--- | :--- |
@@ -82,11 +82,11 @@ During simulation, Skydel will send vehicle position data in _ecef_ at 1000 Hz v
 
 ### Dynamic User Interface
 
-During simulation initialization, Skydel will give a chance to plug-in instances to connect to their user interface for real-time updates via the `connectToView` method. The `QWidget*` parameter is the same as the one created by the `createUI` method.
+During simulation initialization, Skydel will provide opportunity for plug-in instances to connect to their user interface for real-time updates via the `connectToView` method. The `QWidget*` parameter is the same as the one created by the `createUI` method.
 
 ### Example
 
-See plug-in example [position\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/position_observer_plugin). It covers:
+See the plug-in example [position\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/position_observer_plugin) for more information. It covers:
 
 * Receiving real time position data
 * Updating the user interface
@@ -176,13 +176,13 @@ During simulation initialization, Skydel will ask for a `SkydelRuntimeHilObserve
 
 During the simulation, Skydel will send the HIL positions in _ecef_ format as they are received using the `pushHilInput` method. The position will be received in the same data structure as the real time positions of `SkydelPositionObsereverInterface` presented [here](roles.md#skydelpositionobserverinterface).
 
-### Dynamic User Interface 
+### Dynamic User Interface
 
-Same as `SkydelPositionObsereverInterface`, see [here](roles.md#dynamic-user-interface) for more detail.
+Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-interface) for more detail.
 
 ### Example
 
-See plug-in example [hil\_observer_\__plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/hil_observer_plugin). It covers:
+See thr plug-in example [hil\_observer_\__plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/hil_observer_plugin) for more information. It covers:
 
 * Receiving HIL data in real time
 * Updating the user interface
@@ -206,14 +206,14 @@ During simulation, Skydel will send statistics about which module is throttling 
 
 ### Example
 
-See plug-in example [skydel\_default\_instrumentation\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/skydel_default_instrumentation_plugin). It covers:
+See the plug-in example [skydel\_default\_instrumentation\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/skydel_default_instrumentation_plugin) for more information. It covers:
 
 * Generating a _.dot_ file with the graph data
 * Logging Skydel engine queue size
 
 ## SkydelRapiInterface
 
-To facilitate the usage of the remote API by a plug-in, it's suggested to make the plug-in inherit `SkydelRapiAccess` over `SkydelRapiInterface`.
+To facilitate the usage of the remote API by a plug-in, it is recommended to configure the plug-in to inherit `SkydelRapiAccess` over `SkydelRapiInterface`.
 
 Using the remote API in a plug-in is the same as using the remote API in _python_, _C\#_ and _C++_ except that the connection to Skydel is already handled since the plug-in can talk directly to the Skydel engine.
 
@@ -223,9 +223,8 @@ At anytime, a plug-in instance can send a command with the `post` method. It's p
 
 ### Example
 
-See plug-in example [rapi\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/rapi_plugin). It covers:
+See the plug-in example [rapi\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/rapi_plugin) for more information. It covers:
 
 * Inheriting `SkydelRapiAccess` to facilitate `post` call
 * Posting commands to Skydel
 * Using callback to handle command result
-

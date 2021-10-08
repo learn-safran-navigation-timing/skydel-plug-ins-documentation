@@ -13,7 +13,7 @@ A plug-in is a shared library \(_.so_ or _.dll_\) that implements some of the in
 Make sure you copy the plug-in \(_.so_ or _.dll_ file\) into the _Skydel Data Folder / Plug-ins._ When Skydel is launched, it will search that folder in order to list all the available plug-ins.
 
 {% hint style="warning" %}
-The search is only done at the launch of Skydel. Creating a new configuration won't trigger a search for new plug-ins
+The search is only done at the launch of Skydel. Creating a new configuration won't trigger a search for new plug-ins.
 {% endhint %}
 
 ![Skydel&apos;s Plug-in Search at Startup](../.gitbook/assets/plugin_search.png)
@@ -23,7 +23,7 @@ The search is only done at the launch of Skydel. Creating a new configuration wo
 Go to _Settings / Plug-ins_ and select _Add Plug-in...._ Set the name and type of plug-in instance and select _Ok:_
 
 {% hint style="info" %}
-The Type combobox will display available Plug-ins, see _How to make my plug-in available in Skydel?_ for more information
+The Type combobox will display any available Plug-ins; see _How to make my plug-in available in Skydel?_ for more information.
 {% endhint %}
 
 ![](../.gitbook/assets/skydel_plugin_1.png)
@@ -40,9 +40,8 @@ The _Plug-in UI_ menu displays the widget returned by the plug-in:
 
 ![ ](../.gitbook/assets/skydel_plugin_4.png)
 
-## Can a plug-in be instantiated multiple time?
+## Can a plug-in be instantiated multiple times, in multiple instances of Skydel?
 
-Yes, a plug-in can be instantiated multiple time since all plug-in instances are independent.
+Yes, a plug-in can be instantiated multiple times since all plug-in instances are independent.
 
 ![](../.gitbook/assets/skydel_plugin_5.png)
-

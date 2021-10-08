@@ -1,7 +1,7 @@
 ---
 description: >-
-  Here's how you need setup your development environment on Ubuntu 18.04 in
-  order to compile the Skydel Plug-ins examples. It's also useful for user who
+  This section contains instructions on how to setup your development environment in Ubuntu 18.04 in
+  order to compile the Skydel Plug-ins examples. They are also useful for a user who
   wants to develop their own Plug-in.
 ---
 
@@ -18,7 +18,7 @@ sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev
 
 ### GCC 7.5
 
-The GCC compiler is already installed, make sure the version is _7.5:_
+The GCC compiler is already installed; verify that the version is _7.5:_
 
 ```text
 gcc -v
@@ -28,7 +28,7 @@ gcc -v
 
 #### Installation
 
-Update the email\(_QT\_EMAIL_\) and password\(_QT\_PW_\) accordingly, then launch the installation:
+Update the email \(_QT\_EMAIL_\) and password \(_QT\_PW_\) accordingly, then launch the installation:
 
 ```text
 wget https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -O /tmp/qt-installer.run
@@ -50,13 +50,13 @@ If Qt Creator refuses to open, enable debug traces to help find the source of th
 
 #### Configuration
 
-Open Qt Creator, go to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 GCC 64bit \(default\):_
+Open Qt Creator and navigate to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 GCC 64bit \(default\):_
 
 ![](../.gitbook/assets/ub_config_qt_1.png)
 
 Make sure to match the following:
 
-* Compiler 
+* Compiler
   * C: _GCC\(C, x86 64bit in /usr/bin\)_
   * C++: _GCC\(C++, x86 64bit in /usr/bin\)_
 * Qt version : _Qt 5.12.3 GCC 64bit_
@@ -116,4 +116,3 @@ Build output can be found in _skydel-plugin-ins / bin_ under the form of a share
 To make build output available in Skydel, move the _.so_ file to _Skydel Data Folder / Plug-ins:_
 
 ![](../.gitbook/assets/ub_compile_5.png)
-

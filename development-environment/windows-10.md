@@ -1,7 +1,7 @@
 ---
 description: >-
-  Here's how you need setup your development environment on Windows 10 in order
-  to compile the Skydel Plug-ins examples. It's also useful for user who wants
+  This section contains instructions on how to setup your development environment in Windows 10 in order
+  to compile the Skydel Plug-ins examples. The instructions are also useful for a user who wants
   to develop their own Plug-in.
 ---
 
@@ -31,7 +31,7 @@ In _Workloads_ select _Visual C++ build tools_ then _Install:_
 
 ![](../.gitbook/assets/install_vs_5.png)
 
-Wait for installation to end, it may take a while:
+Wait for installation to end (it may take a while):
 
 ![](../.gitbook/assets/install_vs_6.png)
 
@@ -39,9 +39,9 @@ Wait for installation to end, it may take a while:
 
 #### **Installation**
 
-Download the latest windows online installer named _qt-unified-windows-x86-online.exe_ [here](https://download.qt.io/official_releases/online_installers/).
+Download the latest Windows online installer named _qt-unified-windows-x86-online.exe_ [here](https://download.qt.io/official_releases/online_installers/).
 
-Update installer name, email\(_QT\_EMAIL_\) and password\(_QT\_PW_\) accordingly, then launch the installation:
+Update installer name, email \(_QT\_EMAIL_\) and password \(_QT\_PW_\) accordingly, then launch the installation:
 
 ```aspnet
 .\qt-unified-windows-x86-4.1.1-online.exe install qt.qt5.5123.win64_msvc2017_64 qt.tools.cmake.win64 qt.tools.qtcreator `
@@ -51,7 +51,7 @@ Update installer name, email\(_QT\_EMAIL_\) and password\(_QT\_PW_\) accordingly
     --pw QT_PW
 ```
 
-To validate installation, open Qt Creator, go to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit \(default\)_, and make sure it looks like the screenshot below:
+To validate installation, open Qt Creator, navigate to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit \(default\)_, and make sure it looks like the screenshot below:
 
 ![](../.gitbook/assets/win_config_qt_1.png)
 
@@ -116,4 +116,3 @@ Build output can be found in _skydel-plugin-ins / bin_ under the form of a dynam
 To make build output available in Skydel, move the _.dll_ file to _Skydel Data Folder / Plug-ins:_
 
 ![](../.gitbook/assets/win_compile_5.png)
-
