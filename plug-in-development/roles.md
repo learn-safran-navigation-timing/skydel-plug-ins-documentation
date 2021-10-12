@@ -32,11 +32,11 @@ When instantiating a plug-in, Skydel will create and give a `SkydelNotifierInter
 * Send 3 different types of notifications to Skydel via the `notify` method
 * Tell Skydel to change its state to Unsaved via the `setDirty` method
 
-| Type | Description |
-| :--- | :--- |
-| `INFO` | \[Default\] Message logged in _simulator.log as_ an _info_ |
+| Type      | Description                                                                  |
+| --------- | ---------------------------------------------------------------------------- |
+| `INFO`    | \[Default] Message logged in _simulator.log as_ an _info_                    |
 | `WARNING` | Message logged in _simulator.log_ and Skydel _Status Log_ tab as a _warning_ |
-| `ERROR` | Message logged in _simulator.log and_ Skydel _Status Log_ tab as an _error_ |
+| `ERROR`   | Message logged in _simulator.log and_ Skydel _Status Log_ tab as an _error_  |
 
 Sending an `ERROR` notification at runtime will cause the simulation to stop.
 
@@ -59,7 +59,7 @@ When loading a configuration file, Skydel will automatically instantiate all sav
 
 ### Example
 
-See the plug-in example [simple\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/simple_plugin) for more information. It covers:
+See the plug-in example [simple_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/simple_plugin) for more information. It covers:
 
 * Creating a user interface
 * Sending notification messages
@@ -74,11 +74,11 @@ During simulation initialization, Skydel will ask for a `SkydelRuntimePositionOb
 
 During simulation, Skydel will send the vehicle position data in _ecef_ at 1000 Hz via the `pushPosition` method with the following data structure:
 
-| TimedPosition | Unit |
-| :--- | :--- |
-| time | millisecond |
-| position\(x, y, z\) | meter |
-| orientation\(roll, pitch, yaw\) | radian |
+| TimedPosition                 | Unit        |
+| ----------------------------- | ----------- |
+| time                          | millisecond |
+| position(x, y, z)             | meter       |
+| orientation(roll, pitch, yaw) | radian      |
 
 ### Dynamic User Interface
 
@@ -86,7 +86,7 @@ During simulation initialization, Skydel will provide opportunity for plug-in in
 
 ### Example
 
-See the plug-in example [position\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/position_observer_plugin) for more information. It covers:
+See the plug-in example [position_observer_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/position_observer_plugin) for more information. It covers:
 
 * Receiving real time position data
 * Updating the user interface
@@ -101,15 +101,15 @@ During simulation initialization, Skydel will ask for a `SkydelRuntimeRawDataObs
 
 During simulation, Skydel will send raw data at 1 Hz via the `pushRawData` method for every signal of every space vehicle of every constellation that is currently being simulated with the following data structure:
 
-| TimedRawData | Definition | Unit |
-| :--- | :--- | :--- |
-| elapsedTimeMs | Simulation elapsed time | millisecond |
-| svsData | Raw data by constellation | vector of `ConstellationRawData` |
+| TimedRawData  | Definition                | Unit                             |
+| ------------- | ------------------------- | -------------------------------- |
+| elapsedTimeMs | Simulation elapsed time   | millisecond                      |
+| svsData       | Raw data by constellation | vector of `ConstellationRawData` |
 
-| ConstellationRawData | Definition | Unit |
-| :--- | :--- | :--- |
-| system | Constellation identifier | integer\(see mapping bellow\) |
-| svs | Raw data by space vehicle | vector of `SVRawData` |
+| ConstellationRawData | Definition                | Unit                        |
+| -------------------- | ------------------------- | --------------------------- |
+| system               | Constellation identifier  | integer(see mapping bellow) |
+| svs                  | Raw data by space vehicle | vector of `SVRawData`       |
 
 ```cpp
 System mapping:
@@ -122,17 +122,17 @@ System mapping:
 6. NAVIC
 ```
 
-| SVRawData | Definition | Unit |
-| :--- | :--- | :--- |
-| svID | Space vehicle identifier | - |
-| rawDatas | Raw data by signal | vector of `SignalRawData` |
+| SVRawData | Definition               | Unit                      |
+| --------- | ------------------------ | ------------------------- |
+| svID      | Space vehicle identifier | -                         |
+| rawDatas  | Raw data by signal       | vector of `SignalRawData` |
 
-| SignalRawData | Definition | Unit |
-| :--- | :--- | :--- |
-| signal | Signal identifier | integer\(see mapping bellow\) |
-| svElapsedTimeMs | Elapsed time of the SV at current simulation elapsed time | millisecond |
-| pseudorange | Pseudorange | meter |
-| adr | Accumulated doppler range | number of cycle |
+| SignalRawData   | Definition                                                | Unit                        |
+| --------------- | --------------------------------------------------------- | --------------------------- |
+| signal          | Signal identifier                                         | integer(see mapping bellow) |
+| svElapsedTimeMs | Elapsed time of the SV at current simulation elapsed time | millisecond                 |
+| pseudorange     | Pseudorange                                               | meter                       |
+| adr             | Accumulated doppler range                                 | number of cycle             |
 
 ```cpp
 Signal mapping:
@@ -182,11 +182,49 @@ Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-int
 
 ### Example
 
-See thr plug-in example [hil\_observer_\__plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/hil_observer_plugin) for more information. It covers:
+See the plug-in example [hil_observer_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/hil_observer_plugin) for more information. It covers:
 
 * Receiving HIL data in real time
 * Updating the user interface
 * Logging in the temporary folder
+
+## SkydelRadioTimeObserverInterface
+
+### Radio Time
+
+During simulation initialization, Skydel will ask for a `SkydelRuntimeRadioTimeObserver*` from every plug-in instance via the `createRuntimeRadioTimeObserver` method. It is mandatory to give full ownership of the returned pointer to Skydel.
+
+During simulation, Skydel will send an estimate of the radio time at 1000 Hz via the `pushRadioTime` method with the following data structure:
+
+| RadioTimeEstimate  | Definition                              | Unit   |
+| ------------------ | --------------------------------------- | ------ |
+| radioElapsedTimeMs | Recent radio simulation estimated time  | second |
+| estimateTimestamp  | Timestamp of when the estimate was made | -      |
+
+### Helper Functions
+
+#### getDeadline
+
+Returns a system `time_point` for when the RF corresponding to the given `elapsedMs` is expected to be broadcast from the radio. 
+
+This same deadline can be used in conjunction with the `DelayedBroadcaster` in the given example to broadcast a UDP packet at the same time as the RF.
+
+#### microsecondsUntilRadioTransmission
+
+Returns an integer number of microseconds until RF corresponding to the given `elapsedMs` is expected to be broadcast from the radio.
+
+### Dynamic User Interface
+
+Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-interface) for more detail.
+
+### Example
+
+See the plug-in example [radio_time_observer_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/radio_time_observer_plugin) for more information. It covers:
+
+* Receiving the radio time data in real time
+* Updating the user interface
+* Synchronizing multiple types of real time data
+* Synchronizing real time data with RF transmission
 
 ## SkydelLicensingInterface
 
@@ -206,7 +244,7 @@ During simulation, Skydel will send statistics about which module is throttling 
 
 ### Example
 
-See the plug-in example [skydel\_default\_instrumentation\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/skydel_default_instrumentation_plugin) for more information. It covers:
+See the plug-in example [skydel_default_instrumentation_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/skydel_default_instrumentation_plugin) for more information. It covers:
 
 * Generating a _.dot_ file with the graph data
 * Logging Skydel engine queue size
@@ -215,7 +253,7 @@ See the plug-in example [skydel\_default\_instrumentation\_plugin](https://githu
 
 To facilitate the usage of the remote API by a plug-in, it is recommended to configure the plug-in to inherit `SkydelRapiAccess` over `SkydelRapiInterface`.
 
-Using the remote API in a plug-in is the same as using the remote API in _python_, _C\#_ and _C++_ except that the connection to Skydel is already handled since the plug-in can talk directly to the Skydel engine.
+Using the remote API in a plug-in is the same as using the remote API in _python_, _C#_ and _C++_ except that the connection to Skydel is already handled since the plug-in can talk directly to the Skydel engine.
 
 ### Posting Commands
 
@@ -223,7 +261,7 @@ At anytime, a plug-in instance can send a command with the `post` method. It's p
 
 ### Example
 
-See the plug-in example [rapi\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/rapi_plugin) for more information. It covers:
+See the plug-in example [rapi_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/rapi_plugin) for more information. It covers:
 
 * Inheriting `SkydelRapiAccess` to facilitate `post` call
 * Posting commands to Skydel
