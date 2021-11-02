@@ -59,7 +59,7 @@ When loading a configuration file, Skydel will automatically instantiate all sav
 
 ### Example
 
-See the plug-in example [simple_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/simple_plugin) for more information. It covers:
+See the plug-in example [simple\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/simple\_plugin) for more information. It covers:
 
 * Creating a user interface
 * Sending notification messages
@@ -86,7 +86,7 @@ During simulation initialization, Skydel will provide opportunity for plug-in in
 
 ### Example
 
-See the plug-in example [position_observer_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/position_observer_plugin) for more information. It covers:
+See the plug-in example [position\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/position\_observer\_plugin) for more information. It covers:
 
 * Receiving real time position data
 * Updating the user interface
@@ -182,7 +182,7 @@ Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-int
 
 ### Example
 
-See the plug-in example [hil_observer_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/hil_observer_plugin) for more information. It covers:
+See the plug-in example [hil\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/hil\_observer\_plugin) for more information. It covers:
 
 * Receiving HIL data in real time
 * Updating the user interface
@@ -196,20 +196,20 @@ During simulation initialization, Skydel will ask for a `SkydelRuntimeRadioTimeO
 
 During simulation, Skydel will send an estimate of the radio time at 1000 Hz via the `pushRadioTime` method with the following data structure:
 
-| RadioTimeEstimate  | Definition                              | Unit   |
-| ------------------ | --------------------------------------- | ------ |
-| radioElapsedTimeMs | Recent radio simulation estimated time  | second |
-| estimateTimestamp  | Timestamp of when the estimate was made | -      |
+| RadioTimeEstimate  | Definition                                                 | Unit                     |
+| ------------------ | ---------------------------------------------------------- | ------------------------ |
+| radioElapsedTimeMs | Latest radio simulation estimated time                     | millisecond              |
+| osTime             | Operating system time point  of when the estimate was made | std::chrono::time\_point |
 
 ### Helper Functions
 
-#### getDeadline
+#### getDeadline(int64\_t elapsedMs, const RadioTimeEstimate& recentEstimate)
 
-Returns a system `time_point` for when the RF corresponding to the given `elapsedMs` is expected to be broadcast from the radio. 
+Returns an operating system `time_point` for when the RF corresponding to the given `elapsedMs`is expected to be broadcast from the radio.
 
 This same deadline can be used in conjunction with the `DelayedBroadcaster` in the given example to broadcast a UDP packet at the same time as the RF.
 
-#### microsecondsUntilRadioTransmission
+#### microsecondsUntilRadioTransmission(int64\_t elapsedMs, const RadioTimeEstimate& recentEstimate)
 
 Returns an integer number of microseconds until RF corresponding to the given `elapsedMs` is expected to be broadcast from the radio.
 
@@ -219,7 +219,7 @@ Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-int
 
 ### Example
 
-See the plug-in example [radio_time_observer_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/radio_time_observer_plugin) for more information. It covers:
+See the plug-in example [radio\_time\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/radio\_time\_observer\_plugin) for more information. It covers:
 
 * Receiving the radio time data in real time
 * Updating the user interface
@@ -244,7 +244,7 @@ During simulation, Skydel will send statistics about which module is throttling 
 
 ### Example
 
-See the plug-in example [skydel_default_instrumentation_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/skydel_default_instrumentation_plugin) for more information. It covers:
+See the plug-in example [skydel\_default\_instrumentation\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/skydel\_default\_instrumentation\_plugin) for more information. It covers:
 
 * Generating a _.dot_ file with the graph data
 * Logging Skydel engine queue size
@@ -261,7 +261,7 @@ At anytime, a plug-in instance can send a command with the `post` method. It's p
 
 ### Example
 
-See the plug-in example [rapi_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/rapi_plugin) for more information. It covers:
+See the plug-in example [rapi\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/rapi\_plugin) for more information. It covers:
 
 * Inheriting `SkydelRapiAccess` to facilitate `post` call
 * Posting commands to Skydel
