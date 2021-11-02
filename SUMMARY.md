@@ -12,8 +12,8 @@
 * [Roles](plug-in-development/roles.md)
 * [Instantiation](plug-in-development/instantiation.md)
 * [Runtime](plug-in-development/runtime.md)
+* [Time Synchronization](plug-in-development/time-synchronization.md)
 
 ## Plug-ins in Skydel
 
 * [Using Plug-ins](plug-ins-in-skydel/using-plugins.md)
-
