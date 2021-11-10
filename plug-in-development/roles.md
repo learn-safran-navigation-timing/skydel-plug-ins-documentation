@@ -226,6 +226,64 @@ See the plug-in example [radio\_time\_observer\_plugin](https://github.com/learn
 * Synchronizing multiple types of real time data
 * Synchronizing real time data with RF transmission
 
+## SkydelTransmitterObserverInterface
+
+### Real Time Spoofers/Jammers Data
+
+During simulation initialization, Skydel will ask for a `SkydelRuntimeTransmitterObserver*` from every plug-in instance via the `createRuntimeTransmitterObserver` method. It's mandatory to fully give the ownership of the returned pointer to Skydel.
+
+During simulation, Skydel will send simulated spoofers/jammers data at 1000 Hz via the `pushTransmitters` method for every jammer/spoofer that is currently being simulated with the following data structure:
+
+| TimedTransmitters | Definition              | Unit                    |
+| ----------------- | ----------------------- | ----------------------- |
+| elapsedTimeMs     | Simulation elapsed time | millisecond             |
+| jammers           | Simulated jammers       | vector of `Transmitter` |
+| spoofers          | Simulated spoofers      | vector of `Transmitter` |
+
+| Transmitter                   | Definition                                                          | Unit                           |
+| ----------------------------- | ------------------------------------------------------------------- | ------------------------------ |
+| id                            | Unique ID among transmitters                                        | -                              |
+| name                          | User-friendly name for the transmitter                              | -                              |
+| colorName                     | Transmitter color in Skydel UI                                      | -                              |
+| position(x, y, z)             | Transmitter position                                                | meter                          |
+| orientation(roll, pitch, yaw) | Orientation is in NED reference frame                               | radian                         |
+| isEnabled                     | When false, no signals are broadcast                                | -                              |
+| isMasked                      | When false, no signals are broadcast                                | -                              |
+| usingManualPropagationLoss    | When false, free-space-loss is used. When true, manual loss is used | -                              |
+| gainAtTransmitter             | Gain from antenna                                                   | dB                             |
+| referencePower                | Transmitter reference power                                         | dBm                            |
+| range                         | Distance to vehicle                                                 | meter                          |
+| elevation                     | Elevation of this transmitter from the vehicle                      | radian                         |
+| azimuth                       | Azimuth of this transmitter from the vehicle                        | radian                         |
+| interferenceSignals           | All signals associated with this transmitter                        | vector of `InterferenceSignal` |
+
+| InterferenceSignal | Definition                                              | Unit |
+| ------------------ | ------------------------------------------------------- | ---- |
+| id                 | Unique ID among signals from the transmitter            | -    |
+| isEnabled          | When false, signal is not broadcast                     | -    |
+| centerFrequencyHz  | Signal center frequency                                 | Hz   |
+| propagationLoss    | Propagation loss                                        | dB   |
+| gainAtVehicle      | Gain from antenna                                       | dB   |
+| signalPower        | Power relative to transmitter, `NaN` if spoofing signal | dB   |
+| typeName           | Type of transmitter                                     | -    |
+
+{% hint style="info" %}
+`typeName` can have the following values: _Spoof_, _CW_, _Chirp_, _Pulse_, _BPSK_, _BOC_, _AWGN_ or _IQ file_.
+{% endhint %}
+
+### Dynamic User Interface
+
+Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-interface) for more detail.
+
+### Example
+
+See the plug-in example [transmitter\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/transmitter\_observer\_plugin) for more information. It covers:
+
+* Receiving real time spoofers/jammers data
+* Updating the user interface
+* Logging in the temporary folder
+* Sending spoofers/jammers data data on the network
+
 ## SkydelLicensingInterface
 
 {% hint style="warning" %}
