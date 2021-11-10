@@ -271,6 +271,10 @@ During simulation, Skydel will send simulated spoofers/jammers data at 1000 Hz v
 `typeName` can have the following values: _Spoof_, _CW_, _Chirp_, _Pulse_, _BPSK_, _BOC_, _AWGN_ or _IQ file_.
 {% endhint %}
 
+### String ID Uniqueness
+
+Implementors should be careful not to rely on global uniqueness of ID strings. A spoofer and a transmitter can share identical ID strings and identical names.
+
 ### Dynamic User Interface
 
 Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-interface) for more detail.
