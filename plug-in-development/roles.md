@@ -232,7 +232,7 @@ See the plug-in example [radio\_time\_observer\_plugin](https://github.com/learn
 
 During simulation initialization, Skydel will ask for a `SkydelRuntimeTransmitterObserver*` from every plug-in instance via the `createRuntimeTransmitterObserver` method. It's mandatory to fully give the ownership of the returned pointer to Skydel.
 
-This role provides detailed information about each transmitter. A transmitter can broadcast interference signals such as spoofers and interferences. During the simulation, Skydel will send transmitters data at 1000Hz via the `pushTransmitters` method with the following data structure:
+This role provides detailed information about each transmitter. A transmitter can broadcast interference signals such as spoofers and interferences. During the simulation, Skydel will send transmitters data at 1000 Hz via the `pushTransmitters` method with the following data structure:
 
 | TimedTransmitters | Definition              | Unit                    |
 | ----------------- | ----------------------- | ----------------------- |
