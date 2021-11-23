@@ -2,7 +2,6 @@
 description: >-
   This section contains instructions on how to setup your development
   environment in Windows 10 in order to compile the Skydel Plug-ins examples.
-  The instructions are also useful for a user who wants to
 ---
 
 # Windows 10

@@ -2,7 +2,6 @@
 description: >-
   This section contains instructions on how to setup your development
   environment in Ubuntu 18.04 in order to compile the Skydel Plug-ins examples.
-  They are also useful for a user who wants to develop t
 ---
 
 # Ubuntu 18.04
