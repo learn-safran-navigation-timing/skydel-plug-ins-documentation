@@ -84,10 +84,10 @@ By default, plug-ins are installed in _$HOME/Documents/Skydel-SDX/Plug-ins_.
 
 #### Examples Compilation
 
-Use the CMake argument `DBUILD_SKYDELPLUGIN_EXAMPLES` to configure whether the examples should be compiled or not:
+Use the CMake argument `DBUILD_SKYDEL_PLUGIN_EXAMPLES` to configure whether the examples should be compiled or not:
 
 ```
-cmake -DBUILD_SKYDELPLUGIN_EXAMPLES=FALSE ..
+cmake -DBUILD_SKYDEL_PLUGIN_EXAMPLES=FALSE ..
 ```
 
 {% hint style="info" %}
