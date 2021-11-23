@@ -64,6 +64,10 @@ Download the latest installer [here](https://gitforwindows.org) and install Git.
 Use default configuration settings during installation.
 {% endhint %}
 
+## CMake
+
+Download the latest installer [here](https://cmake.org/download/) and install CMake.
+
 ## Blaze 3.7 (CMake Users Only)
 
 CMake users need to install Blaze 3.7 from the official repository in their search path:

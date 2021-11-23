@@ -64,6 +64,10 @@ Make sure to match the following:
 sudo apt install git
 ```
 
+## CMake
+
+Download the latest installer [here](https://cmake.org/download/) and install CMake.
+
 ## Blaze 3.7 (CMake Users Only)
 
 CMake users need to install Blaze 3.7 from the official repository in their search path:
