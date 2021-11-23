@@ -70,7 +70,20 @@ Use default configuration settings during installation.
 
 ### **Getting the Source Code**
 
+
+
+### Blaze 3.7 (CMake Users Only)
+
+CMake users need to install Blaze 3.7 from the official repository in their search path:
+
 The GitHub repository contains the Skydel Plug-ins SDK and some examples:
+
+```
+git clone https://github.com/parsa/blaze 
+cd blaze mkdir build && cd build 
+cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DBLAZE_BLAS_MODE=OFF -DUSE_LAPACK=OFF -DBLAZE_CACHE_SIZE_AUTO=OFF .. 
+cmake --install .
+```
 
 ```
 git clone https://github.com/learn-orolia/skydel-plug-ins
@@ -84,6 +97,10 @@ git pull
 ```
 
 **Getting a Specific Version of the Source Code**
+
+{% hint style="info" %}
+By default _blas_ and _lapack_ libraries are used, but feel free to check all of Blaze options from their repository documentation.
+{% endhint %}
 
 {% hint style="info" %}
 Checkout this [page](https://github.com/learn-orolia/skydel-plug-ins/releases) for supported versions
