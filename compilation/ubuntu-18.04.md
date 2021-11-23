@@ -79,7 +79,7 @@ cmake -DPLUGIN_INSTALL_DIR=mypath ..
 ```
 
 {% hint style="info" %}
-By default, plug-ins are installed in _Skydel Data Folder / Plug-ins._
+By default, plug-ins are installed in _$HOME/Documents/Skydel-SDX/Plug-ins._
 {% endhint %}
 
 #### Examples Compilation
@@ -99,6 +99,6 @@ By default, the examples are compiled.
 After installing the SDK, It can be imported into your own CMake project by adding the following lines in your CMakeLists:
 
 ```
-find_package(SkydelPlugIn)
-target_link_libraries(MyPlugin PUBLIC Skydel::SkydelPlugIn)
+find_package(SkydelPlugin)
+target_link_libraries(MyPlugin PUBLIC Skydel::SkydelPlugin)
 ```

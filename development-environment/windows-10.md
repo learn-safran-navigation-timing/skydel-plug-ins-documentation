@@ -6,9 +6,7 @@ description: >-
 
 # Windows 10
 
-## Prerequisites
-
-### Visual Studio Build Tools 2017
+## Visual Studio Build Tools 2017
 
 Go to the _Visual Studio 2017 and other Products_ download page with the link [here](https://visualstudio.microsoft.com/vs/older-downloads/):
 
@@ -34,7 +32,7 @@ Wait for installation to end (it may take a while):
 
 ![](../.gitbook/assets/install\_vs\_6.png)
 
-### Qt Open Source 5.12.3
+## Qt Open Source 5.12.3
 
 #### **Installation**
 
@@ -58,7 +56,7 @@ To validate installation, open Qt Creator, navigate to _Tools / Options... / Kit
 The C and C++ compiler version might be slightly different.
 {% endhint %}
 
-### Git 2.29.1
+## Git 2.29.1
 
 Download the latest installer [here](https://gitforwindows.org) and install Git.
 
@@ -66,17 +64,9 @@ Download the latest installer [here](https://gitforwindows.org) and install Git.
 Use default configuration settings during installation.
 {% endhint %}
 
-## Compilation
-
-### **Getting the Source Code**
-
-
-
-### Blaze 3.7 (CMake Users Only)
+## Blaze 3.7 (CMake Users Only)
 
 CMake users need to install Blaze 3.7 from the official repository in their search path:
-
-The GitHub repository contains the Skydel Plug-ins SDK and some examples:
 
 ```
 git clone https://github.com/parsa/blaze 
@@ -85,50 +75,6 @@ cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DBLAZE_BLAS_MODE=OFF -DUSE
 cmake --install .
 ```
 
-```
-git clone https://github.com/learn-orolia/skydel-plug-ins
-```
-
-**Updating the Souce Code**
-
-```
-cd skydel-plug-ins
-git pull
-```
-
-**Getting a Specific Version of the Source Code**
-
 {% hint style="info" %}
 By default _blas_ and _lapack_ libraries are used, but feel free to check all of Blaze options from their repository documentation.
 {% endhint %}
-
-{% hint style="info" %}
-Checkout this [page](https://github.com/learn-orolia/skydel-plug-ins/releases) for supported versions
-{% endhint %}
-
-```
-cd skydel-plug-ins
-git checkout VERSION
-```
-
-### **Compiling the Source Code**
-
-Open Qt Creator, go to _File / Open File or Project..._ and select the project file located in _skydel-plug-ins / skydel\_plugin.pro_. Make sure the selected kit is _Desktop Qt 5.12.3 MSVC2017 64bit_ and select _Configure Project:_
-
-![](../.gitbook/assets/win\_compile\_1.png)
-
-Go to Projects, change _Edit build configuration_ for _Release_ and disable _Shadow build:_
-
-![](../.gitbook/assets/win\_compile\_2.png)
-
-Go to _Edit_, right click on the root folder and select _Rebuild_:
-
-![](../.gitbook/assets/win\_compile\_3.png)
-
-Build output can be found in _skydel-plugin-ins / bin_ under the form of a dynamic-link library (e.g. simple\_plugin.lib)
-
-![](../.gitbook/assets/win\_compile\_4.png)
-
-To make build output available in Skydel, move the _.dll_ file to _Skydel Data Folder / Plug-ins:_
-
-![](../.gitbook/assets/win\_compile\_5.png)

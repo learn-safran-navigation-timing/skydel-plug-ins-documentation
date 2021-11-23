@@ -6,16 +6,14 @@ description: >-
 
 # Ubuntu 18.04
 
-## Prerequisites
-
-### System Dependencies
+## System Dependencies
 
 ```
 sudo apt-get update
 sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev
 ```
 
-### GCC 7.5
+## GCC 7.5
 
 The GCC compiler is already installed; verify that the version is _7.5:_
 
@@ -23,7 +21,7 @@ The GCC compiler is already installed; verify that the version is _7.5:_
 gcc -v
 ```
 
-### Qt Open Source 5.12.3
+## Qt Open Source 5.12.3
 
 #### Installation
 
@@ -60,72 +58,18 @@ Make sure to match the following:
   * C++: _GCC(C++, x86 64bit in /usr/bin)_
 * Qt version : _Qt 5.12.3 GCC 64bit_
 
-### Git 2.17.1
+## Git 2.17.1
 
 ```
 sudo apt install git
 ```
 
-### Blaze 3.7 (CMake Users Only)
-
-## Compilation
-
-### Getting the Source Code
+## Blaze 3.7 (CMake Users Only)
 
 CMake users need to install Blaze 3.7 from the official repository in their search path:
-
-The GitHub repository contains the Skydel Plug-ins SDK and some examples:
 
 ```
 git clone https://github.com/parsa/blaze
 cd blaze && mkdir build && cd build
 cmake -DBLAZE_BLAS_MODE=ON .. && sudo make install
 ```
-
-```
-git clone https://github.com/learn-orolia/skydel-plug-ins
-```
-
-#### Updating the Souce Code
-
-```
-cd skydel-plug-ins
-git pull
-```
-
-#### Getting a Specific Version of the Source Code
-
-{% hint style="info" %}
-By default _blas_ and _lapack_ libraries are used, but feel free to check all of Blaze options from their repository documentation.
-{% endhint %}
-
-{% hint style="info" %}
-Checkout this [page](https://github.com/learn-orolia/skydel-plug-ins/releases) for supported versions
-{% endhint %}
-
-```
-cd skydel-plug-ins
-git checkout VERSION
-```
-
-### Compiling the Source Code
-
-Open Qt Creator, go to _File / Open File or Project..._ and select the project file located in _skydel-plug-ins / skydel\_plugin.pro_. Make sure the selected kit is _Desktop Qt 5.12.3 QCC 64bit_ and select _Configure Project:_
-
-![](../.gitbook/assets/ub\_compile\_1.png)
-
-Go to Projects, change _Edit build configuration_ for _Release_ and disable _Shadow build:_
-
-![](../.gitbook/assets/ub\_compile\_2.png)
-
-Go to Edit, right click on the root folder and select _Rebuild:_
-
-![](../.gitbook/assets/ub\_compile\_3.png)
-
-Build output can be found in _skydel-plugin-ins / bin_ under the form of a shared object (e.g. libsimple\_plugin.so)
-
-![](../.gitbook/assets/ub\_compile\_4.png)
-
-To make build output available in Skydel, move the _.so_ file to _Skydel Data Folder / Plug-ins:_
-
-![](../.gitbook/assets/ub\_compile\_5.png)
