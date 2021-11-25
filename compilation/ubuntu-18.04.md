@@ -62,7 +62,7 @@ In this section we will show you how to compile the examples plug-ins using CMak
 
 #### Build and Install
 
-You can build and install Skydel Plug-ins SDK with all the examples from command line, out of source build are suggested:&#x20;
+You can build and install Skydel Plug-ins SDK with all the examples from command line, out of source build are suggested:
 
 ```
 mkdir build && cd build
@@ -72,10 +72,10 @@ make -j4 install
 
 #### Installation Destination
 
-Use the CMake argument `DPLUGIN_INSTALL_DIR` to configure the installation destination folder:
+Use the CMake argument `CMAKE_INSTALL_PREFIX` to configure the installation destination folder of the Plug-ins SDK:
 
 ```
-cmake -DPLUGIN_INSTALL_DIR=mypath ..
+cmake -DCMAKE_INSTALL_PREFIX=mypath ..
 ```
 
 {% hint style="info" %}
@@ -84,7 +84,7 @@ By default, plug-ins are installed in _$HOME/Documents/Skydel-SDX/Plug-ins._
 
 #### Examples Compilation
 
-Use the CMake argument `DBUILD_SKYDEL_PLUGIN_EXAMPLES` to configure whether the examples should be compiled or not:
+Use the CMake argument `BUILD_SKYDEL_PLUGIN_EXAMPLES` to configure whether the examples should be compiled or not:
 
 ```
 cmake -DBUILD_SKYDEL_PLUGIN_EXAMPLES=FALSE ..
@@ -93,6 +93,14 @@ cmake -DBUILD_SKYDEL_PLUGIN_EXAMPLES=FALSE ..
 {% hint style="info" %}
 By default, the examples are compiled.
 {% endhint %}
+
+#### Examples Installation Destination
+
+Use the CMake argument `PLUGIN_INSTALL_DIR` to configure the installation destination folder of the examples:
+
+```
+cmake -DPLUGIN_INSTALL_DIR=mypath ..
+```
 
 #### Using the SDK in an Other CMake Project
 
