@@ -136,32 +136,37 @@ System mapping:
 
 ```cpp
 Signal mapping:
-0. GPS_L1_PCODE
-1. GPS_L2_PCODE
-2. GPS_L1_MCODE
-3. GPS_L2_MCODE
-4. GPS_L5
-5. GLONASS_G1
-6. GLONASS_G2
-7. GALILEO_E1
-8. GALILEO_E1_PRS
-9. GALILEO_E5a
-10. GALILEO_E5b
-11. GALILEO_E5ALTBOC
-12. GALILEO_E6
-13. GALILEO_E6_PRS
-14. BEIDOU_B1
-15. BEIDOU_B2
-16. BEIDOU_B1C
-17. BEIDOU_B2a
-18. SBAS_L1
-19. SBAS_L5
-20. QZSS_L1_CA
-21. QZSS_L1C
-22. QZSS_L5
-23. QZSS_L1S
-24. QZSS_L5S
-25. NAVIC_L5
+0. GPS_L1_CA
+1. GPS_L1C
+2. GPS_L2C
+3. GPS_L1_PCODE
+4. GPS_L2_PCODE
+5. GPS_L1_MCODE
+6. GPS_L2_MCODE
+7. GPS_L5
+8. GLONASS_G1
+9. GLONASS_G2
+10. GALILEO_E1
+11. GALILEO_E1_PRS
+12. GALILEO_E5a
+13. GALILEO_E5b
+14. GALILEO_E5ALTBOC
+15. GALILEO_E6
+16. GALILEO_E6_PRS
+17. BEIDOU_B1
+18. BEIDOU_B2
+19. BEIDOU_B1C
+20. BEIDOU_B2a
+21. SBAS_L1
+22. SBAS_L5
+23. QZSS_L1_CA
+24. QZSS_L1C
+25. QZSS_L5
+26. QZSS_L1S
+27. QZSS_L5S
+28. NAVIC_L5
+29. QZSS_L2C
+30. QZSS_L1_CB
 ```
 
 ### Dynamic User Interface
@@ -196,10 +201,10 @@ During simulation initialization, Skydel will ask for a `SkydelRuntimeRadioTimeO
 
 During simulation, Skydel will send an estimate of the radio time at 1000 Hz via the `pushRadioTime` method with the following data structure:
 
-| RadioTimeEstimate  | Definition                                                 | Unit                     |
-| ------------------ | ---------------------------------------------------------- | ------------------------ |
-| radioElapsedTimeMs | Latest radio simulation estimated time                     | millisecond              |
-| osTime             | Operating system time point  of when the estimate was made | std::chrono::time\_point |
+| RadioTimeEstimate  | Definition                                                | Unit                     |
+| ------------------ | --------------------------------------------------------- | ------------------------ |
+| radioElapsedTimeMs | Latest radio simulation estimated time                    | millisecond              |
+| osTime             | Operating system time point of when the estimate was made | std::chrono::time\_point |
 
 ### Helper Functions
 
