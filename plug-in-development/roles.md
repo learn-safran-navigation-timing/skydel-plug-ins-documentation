@@ -59,7 +59,7 @@ When loading a configuration file, Skydel will automatically instantiate all sav
 
 ### Example
 
-See the plug-in example [simple\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/simple\_plugin) for more information. It covers:
+See the plug-in example [simple\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/simple\_plugin) for more information. It covers:
 
 * Creating a user interface
 * Sending notification messages
@@ -86,7 +86,7 @@ During simulation initialization, Skydel will provide opportunity for plug-in in
 
 ### Example
 
-See the plug-in example [position\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/position\_observer\_plugin) for more information. It covers:
+See the plug-in example [position\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/position\_observer\_plugin) for more information. It covers:
 
 * Receiving real time position data
 * Updating the user interface
@@ -106,68 +106,22 @@ During simulation, Skydel will send raw data at 1 Hz via the `pushRawData` metho
 | elapsedTimeMs | Simulation elapsed time   | millisecond                      |
 | svsData       | Raw data by constellation | vector of `ConstellationRawData` |
 
-| ConstellationRawData | Definition                | Unit                        |
-| -------------------- | ------------------------- | --------------------------- |
-| system               | Constellation identifier  | integer(see mapping bellow) |
-| svs                  | Raw data by space vehicle | vector of `SVRawData`       |
-
-```cpp
-System mapping:
-0. GPS
-1. GLONASS
-2. GALILEO
-3. BEIDOU
-4. SBAS
-5. QZSS
-6. NAVIC
-```
+| ConstellationRawData | Definition                | Unit                  |
+| -------------------- | ------------------------- | --------------------- |
+| system               | Constellation identifier  | Enum `Constellation`  |
+| svs                  | Raw data by space vehicle | vector of `SVRawData` |
 
 | SVRawData | Definition               | Unit                      |
 | --------- | ------------------------ | ------------------------- |
 | svID      | Space vehicle identifier | -                         |
 | rawDatas  | Raw data by signal       | vector of `SignalRawData` |
 
-| SignalRawData   | Definition                                                | Unit                        |
-| --------------- | --------------------------------------------------------- | --------------------------- |
-| signal          | Signal identifier                                         | integer(see mapping bellow) |
-| svElapsedTimeMs | Elapsed time of the SV at current simulation elapsed time | millisecond                 |
-| pseudorange     | Pseudorange                                               | meter                       |
-| adr             | Accumulated doppler range                                 | number of cycle             |
-
-```cpp
-Signal mapping:
-0. GPS_L1_CA
-1. GPS_L1C
-2. GPS_L2C
-3. GPS_L1_PCODE
-4. GPS_L2_PCODE
-5. GPS_L1_MCODE
-6. GPS_L2_MCODE
-7. GPS_L5
-8. GLONASS_G1
-9. GLONASS_G2
-10. GALILEO_E1
-11. GALILEO_E1_PRS
-12. GALILEO_E5a
-13. GALILEO_E5b
-14. GALILEO_E5ALTBOC
-15. GALILEO_E6
-16. GALILEO_E6_PRS
-17. BEIDOU_B1
-18. BEIDOU_B2
-19. BEIDOU_B1C
-20. BEIDOU_B2a
-21. SBAS_L1
-22. SBAS_L5
-23. QZSS_L1_CA
-24. QZSS_L1C
-25. QZSS_L5
-26. QZSS_L1S
-27. QZSS_L5S
-28. NAVIC_L5
-29. QZSS_L2C
-30. QZSS_L1_CB
-```
+| SignalRawData   | Definition                                                | Unit            |
+| --------------- | --------------------------------------------------------- | --------------- |
+| signal          | Signal identifier                                         | Enum `Signal`   |
+| svElapsedTimeMs | Elapsed time of the SV at current simulation elapsed time | millisecond     |
+| pseudorange     | Pseudorange                                               | meter           |
+| adr             | Accumulated doppler range                                 | number of cycle |
 
 ### Dynamic User Interface
 
@@ -187,7 +141,7 @@ Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-int
 
 ### Example
 
-See the plug-in example [hil\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/hil\_observer\_plugin) for more information. It covers:
+See the plug-in example [hil\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/hil\_observer\_plugin) for more information. It covers:
 
 * Receiving HIL data in real time
 * Updating the user interface
@@ -224,7 +178,7 @@ Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-int
 
 ### Example
 
-See the plug-in example [radio\_time\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/radio\_time\_observer\_plugin) for more information. It covers:
+See the plug-in example [radio\_time\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/radio\_time\_observer\_plugin) for more information. It covers:
 
 * Receiving the radio time data in real time
 * Updating the user interface
@@ -286,7 +240,7 @@ Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-int
 
 ### Example
 
-See the plug-in example [transmitter\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/transmitter\_observer\_plugin) for more information. It covers:
+See the plug-in example [transmitter\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/transmitter\_observer\_plugin) for more information. It covers:
 
 * Receiving real time spoofers/interferences data
 * Updating the user interface
@@ -298,23 +252,6 @@ See the plug-in example [transmitter\_observer\_plugin](https://github.com/learn
 {% hint style="warning" %}
 To use this role and see an example, contact Orolia Canada's technical support.
 {% endhint %}
-
-## SkydelInstrumentationInterface
-
-### Engine Graph
-
-During simulation initialization, Skydel will send a graph showing the relationship between each module in the Skydel engine to every plug-in instance via the `setEngineGraph` method.
-
-### Real Time Statistics
-
-During simulation, Skydel will send statistics about which module is throttling the simulation at 100 Hz via the `pushQueueMeasures` method.
-
-### Example
-
-See the plug-in example [skydel\_default\_instrumentation\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/skydel\_default\_instrumentation\_plugin) for more information. It covers:
-
-* Generating a _.dot_ file with the graph data
-* Logging Skydel engine queue size
 
 ## SkydelRapiInterface
 
@@ -328,7 +265,7 @@ At anytime, a plug-in instance can send a command with the `post` method. It's p
 
 ### Example
 
-See the plug-in example [rapi\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/source/example/rapi\_plugin) for more information. It covers:
+See the plug-in example [rapi\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/rapi\_plugin) for more information. It covers:
 
 * Inheriting `SkydelRapiAccess` to facilitate `post` call
 * Posting commands to Skydel
