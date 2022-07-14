@@ -8,6 +8,22 @@ git clone https://github.com/learn-orolia/skydel-plug-ins
 
 ## Compilation
 
+### Qt Creator
+
+In Qt Creator, open the **CMakeLists.txt** file from the root  folder:
+
+{% tabs %}
+{% tab title="Ubuntu" %}
+<img src="../.gitbook/assets/file.drawing (1).svg" alt="" class="gitbook-drawing">
+{% endtab %}
+
+{% tab title="Windows" %}
+<img src="../.gitbook/assets/file.drawing.svg" alt="" class="gitbook-drawing">
+{% endtab %}
+{% endtabs %}
+
+<img src="../.gitbook/assets/file.drawing (1).svg" alt="" class="gitbook-drawing">
+
 ### Command Line
 
 {% tabs %}
@@ -37,12 +53,6 @@ cmake --install .
 | `CMAKE_INSTALL_PREFIX`         | Destination folder of the Plug-ins SDK         | -                                     |
 | `BUILD_SKYDEL_PLUGIN_EXAMPLES` | Whether the examples should be compiled or not | TRUE                                  |
 | `PLUGIN_INSTALL_DIR`           | Destination folder of the examples             | _$HOME/Documents/Skydel-SDX/Plug-ins_ |
-
-### Qt Creator
-
-In Qt Creator, open the **CMakeLists.txt** file from the root  folder:
-
-<img src="../.gitbook/assets/file.drawing.svg" alt="" class="gitbook-drawing">
 
 ## Using the SDK in an Other CMake Project
 
