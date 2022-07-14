@@ -11,7 +11,7 @@ description: >-
 ```
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev git
+sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev uuid-dev git 
 ```
 
 <details>
@@ -22,6 +22,7 @@ sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev 
 * libgl1-mesa-dev -> OpenGL
 * libxcb-xinerama0 -> Qt installer
 * liblapack-dev -> Blaze
+* uuid-dev -> Skydel remote API
 * git -> Source code
 
 </details>
