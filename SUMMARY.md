@@ -4,13 +4,9 @@
 
 ## Development Environment
 
-* [Ubuntu 18.04](development-environment/ubuntu-18.md)
+* [Ubuntu 22.04](development-environment/ubuntu-18.md)
 * [Windows 10](development-environment/windows-10.md)
-
-## Compilation
-
-* [Ubuntu 18.04](compilation/ubuntu-18.04.md)
-* [Windows 10](compilation/windows-10.md)
+* [Compilation](development-environment/compilation.md)
 
 ## Plug-in Development
 

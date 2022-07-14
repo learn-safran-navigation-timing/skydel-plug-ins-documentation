@@ -4,35 +4,52 @@ description: >-
   environment in Ubuntu 18.04 in order to compile the Skydel Plug-ins examples.
 ---
 
-# Ubuntu 18.04
+# Ubuntu 22.04
 
-## System Dependencies
-
-```
-sudo apt-get update
-sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev
-```
-
-## GCC 7.5
-
-The GCC compiler is already installed; verify that the version is _7.5:_
+## Updates & Packages
 
 ```
-gcc -v
+sudo apt update
+sudo apt dist-upgrade
+sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev git
 ```
 
-## Qt Open Source 5.12.3
+<details>
 
-#### Installation
+<summary>Packages detailed information</summary>
 
-Update the email (_QT\_EMAIL_) and password (_QT\_PW_) accordingly, then launch the installation:
+* build-essential -> GCC and G++ 11.2.0
+* libgl1-mesa-dev -> OpenGL
+* libxcb-xinerama0 -> Qt installer
+* liblapack-dev -> Blaze
+* git -> Source code
+
+</details>
+
+## GCC/G++
+
+<details>
+
+<summary>Version should be 11.2.0 for <code>gcc</code> and <code>g++</code></summary>
+
+```
+gcc --version
+> gcc (Ubuntu 11.2.0-19ubuntu1) 11.2.0
+
+g++ --version
+> g++ (Ubuntu 11.2.0-19ubuntu1) 11.2.0
+```
+
+</details>
+
+## Qt
 
 ```
 wget https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -O /tmp/qt-installer.run
 
 chmod +x /tmp/qt-installer.run
 
-sudo /tmp/qt-installer.run install qt.qt5.5123.gcc_64 qt.tools.cmake qt.tools.qtcreator \
+sudo /tmp/qt-installer.run install qt.qt5.5152.gcc_64 qt.tools.cmake qt.tools.qtcreator \
     --root /opt/Qt \
     --auto-answer telemetry-question=No --accept-licenses --default-answer --accept-obligations --confirm-command \
     --email QT_EMAIL \
@@ -41,36 +58,22 @@ sudo /tmp/qt-installer.run install qt.qt5.5123.gcc_64 qt.tools.cmake qt.tools.qt
 rm /tmp/qt-installer.run
 ```
 
-{% hint style="warning" %}
-If Qt Creator refuses to open, enable debug traces to help find the source of the problem:`export QT_DEBUG_PLUGINS=1 && /opt/Qt/Tools/QtCreator/bin/qtcreator`
+{% hint style="info" %}
+Update the email (_QT\_EMAIL_) and password (_QT\_PW_) accordingly
 {% endhint %}
-
-#### Configuration
-
-Open Qt Creator and navigate to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 GCC 64bit (default):_
-
-![](../.gitbook/assets/ub\_config\_qt\_1.png)
-
-Make sure to match the following:
-
-* Compiler
-  * C: _GCC(C, x86 64bit in /usr/bin)_
-  * C++: _GCC(C++, x86 64bit in /usr/bin)_
-* Qt version : _Qt 5.12.3 GCC 64bit_
-
-## Git 2.17.1
-
-```
-sudo apt install git
-```
 
 ## CMake
 
-Download the latest installer [here](https://cmake.org/download/) and install CMake.
+```
+wget https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1.tar.gz
+tar -xzvf cmake-3.22.1.tar.gz
+cd cmake-3.22.1
+./bootstrap
+make -j4
+sudo make install 
+```
 
-## Blaze 3.7 (CMake Users Only)
-
-CMake users need to install Blaze 3.7 from the official repository in their search path:
+## Blaze
 
 ```
 git clone https://github.com/parsa/blaze

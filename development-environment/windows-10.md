@@ -6,69 +6,71 @@ description: >-
 
 # Windows 10
 
-## Visual Studio Build Tools 2017
+## MSVC
 
-Go to the _Visual Studio 2017 and other Products_ download page with the link [here](https://visualstudio.microsoft.com/vs/older-downloads/):
+Download latest Build Tools for Visual Studio 2019 [online installer](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2019-and-other-products) and install C++ build tools.
 
-![](../.gitbook/assets/install\_vs\_1.png)
+![](../.gitbook/assets/windows\_msvc.svg)
 
-Download _Build Tools for Visual Studio 2017 (version 15.9)_:
+<details>
 
-![](../.gitbook/assets/install\_vs\_2.png)
+<summary>Version should at least be 19.28.29924 for <code>cl</code></summary>
 
-Open the installer and select _Continue_:
+```
+# Path might be different on newer versions
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.28.29910\bin\Hostx64\x64\cl.exe
+> Microsoft (R) C/C++ Optimizing Compiler Version 19.28.29924 for x64
+```
 
-![](../.gitbook/assets/install\_vs\_3.png)
+</details>
 
-Wait for the setup to end:
+## Qt
 
-![](../.gitbook/assets/install\_vs\_4.png)
-
-In _Workloads_ select _Visual C++ build tools_ then _Install:_
-
-![](../.gitbook/assets/install\_vs\_5.png)
-
-Wait for installation to end (it may take a while):
-
-![](../.gitbook/assets/install\_vs\_6.png)
-
-## Qt Open Source 5.12.3
-
-#### **Installation**
-
-Download the latest Windows online installer named _qt-unified-windows-x86-online.exe_ [here](https://download.qt.io/official\_releases/online\_installers/).
-
-Update installer name, email (_QT\_EMAIL_) and password (_QT\_PW_) accordingly, then launch the installation:
+Download the latest [online installer](https://download.qt.io/official\_releases/online\_installers/) named _qt-unified-windows-x86-online.exe_ and install:
 
 ```aspnet
-.\qt-unified-windows-x86-4.1.1-online.exe install qt.qt5.5123.win64_msvc2017_64 qt.tools.cmake.win64 qt.tools.qtcreator `
+.\qt-unified-windows-x86-4.1.1-online.exe install qt.qt5.5152.win64_msvc2017_64 qt.tools.cmake.win64 qt.tools.qtcreator `
     --root C:\Qt `
     --auto-answer telemetry-question=No --accept-licenses --default-answer --accept-obligations --confirm-command `
     --email QT_EMAIL `
     --pw QT_PW
 ```
 
-To validate installation, open Qt Creator, navigate to _Tools / Options... / Kits_ and select _Desktop Qt 5.12.3 MSVC2017 64bit (default)_, and make sure it looks like the screenshot below:
-
-![](../.gitbook/assets/win\_config\_qt\_1.png)
-
 {% hint style="info" %}
-The C and C++ compiler version might be slightly different.
-{% endhint %}
-
-## Git 2.29.1
-
-Download the latest installer [here](https://gitforwindows.org) and install Git.
-
-{% hint style="info" %}
-Use default configuration settings during installation.
+Update the email (_QT\_EMAIL_) and password (_QT\_PW_) accordingly
 {% endhint %}
 
 ## CMake
 
-Download the latest installer [here](https://cmake.org/download/) and install CMake.
+Download and install [CMake](https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1-windows-x86\_64.msi).
 
-## Blaze 3.7 (CMake Users Only)
+<details>
+
+<summary>Version should be 3.22.1 for <code>cmake</code></summary>
+
+```
+cmake --version
+> cmake version 3.22.1
+```
+
+</details>
+
+## Git
+
+Download and install latest [git](https://gitforwindows.org).
+
+<details>
+
+<summary>Version should at least be 2.30.2 for <code>git</code></summary>
+
+```
+git --version
+> git version 2.30.2.windows.1
+```
+
+</details>
+
+## Blaze
 
 CMake users need to install Blaze 3.7 from the official repository in their search path:
 
