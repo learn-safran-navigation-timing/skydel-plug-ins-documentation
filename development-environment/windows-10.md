@@ -76,7 +76,9 @@ CMake users need to install Blaze 3.7 from the official repository in their sear
 
 ```
 git clone https://github.com/parsa/blaze 
-cd blaze mkdir build && cd build 
+cd blaze 
+mkdir build
+cd build 
 cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DBLAZE_BLAS_MODE=OFF -DUSE_LAPACK=OFF -DBLAZE_CACHE_SIZE_AUTO=OFF .. 
 cmake --install .
 ```
