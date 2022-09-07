@@ -38,7 +38,7 @@ cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
 mkdir build
 cd build
 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
-cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+cmake -G"Ninja" -DCMAKE_BUILD_TYPE=Release ..
 cmake --build .
 cmake --install .
 ```

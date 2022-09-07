@@ -24,6 +24,26 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.
 
 </details>
 
+## Ninja
+
+* Download and unzip [ninja-win.zip](https://github.com/ninja-build/ninja/releases/download/v1.10.1/ninja-win.zip) to _Program Files / ninja-win_
+* From the search bar, search for _Edit the system environment variables_
+* Select _Envrionment Variables..._
+* Select _Path_ in _System variables_ and select _Edit..._
+* Select _Browse..._ and find the folder _Program Files / ninja-win_ (where you unziped _ninja-win.zip_)
+* After those steps, ninja should be accessible from anywhere
+
+<details>
+
+<summary>Version should be 1.10.1 for <code>ninja</code></summary>
+
+```
+ninja --version
+> 1.10.1
+```
+
+</details>
+
 ## Qt
 
 Download the latest [online installer](https://download.qt.io/official\_releases/online\_installers/) named _qt-unified-windows-x64-online.exe_ and install:
