@@ -11,7 +11,7 @@ description: >-
 ```
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev uuid-dev git 
+sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev uuid-dev git libssl-dev 
 ```
 
 <details>
@@ -24,6 +24,7 @@ sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev 
 * liblapack-dev -> Blaze
 * uuid-dev -> Skydel remote API
 * git -> Source code
+* libssl-dev -> CMake compilation
 
 </details>
 
@@ -50,7 +51,7 @@ wget https://download.qt.io/official_releases/online_installers/qt-unified-linux
 
 chmod +x /tmp/qt-installer.run
 
-sudo /tmp/qt-installer.run install qt.qt5.5152.gcc_64 qt.tools.cmake qt.tools.qtcreator \
+sudo /tmp/qt-installer.run install qt.qt5.5152.gcc_64 qt.tools.qtcreator \
     --root /opt/Qt \
     --auto-answer telemetry-question=No --accept-licenses --default-answer --accept-obligations --confirm-command \
     --email QT_EMAIL \
