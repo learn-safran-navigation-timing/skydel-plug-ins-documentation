@@ -34,7 +34,7 @@ make -j4 install
 {% endtab %}
 
 {% tab title="Windows" %}
-{% code title="From the Command Prompt" %}
+{% code title="From an elevated Command Prompt" %}
 ```
 mkdir build
 cd build
