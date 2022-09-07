@@ -11,7 +11,7 @@ description: >-
 ```
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev uuid-dev git libssl-dev 
+sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev uuid-dev git libssl-dev ninja-build
 ```
 
 <details>
@@ -25,6 +25,7 @@ sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev 
 * uuid-dev -> Skydel remote API
 * git -> Source code
 * libssl-dev -> CMake compilation
+* ninja-build -> Compilation
 
 </details>
 
@@ -40,6 +41,19 @@ gcc --version
 
 g++ --version
 > g++ (Ubuntu 11.2.0-19ubuntu1) 11.2.0
+```
+
+</details>
+
+## Ninja
+
+<details>
+
+<summary>Version should be 1.10.1 for <code>ninja</code></summary>
+
+```
+ninja --version
+> 1.10.1
 ```
 
 </details>

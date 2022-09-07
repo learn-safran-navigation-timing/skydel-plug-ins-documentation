@@ -27,8 +27,9 @@ In Qt Creator, open the **CMakeLists.txt** file from the root  folder:
 {% tabs %}
 {% tab title="Ubuntu" %}
 <pre><code>mkdir build &#x26;&#x26; cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
-<strong>sudo make -j4 install</strong></code></pre>
+cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
+<strong>cmake --build .
+</strong><strong>sudo cmake --install .</strong></code></pre>
 {% endtab %}
 
 {% tab title="Windows" %}
