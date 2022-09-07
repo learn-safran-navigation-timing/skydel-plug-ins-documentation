@@ -26,15 +26,17 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.
 
 ## Qt
 
-Download the latest [online installer](https://download.qt.io/official\_releases/online\_installers/) named _qt-unified-windows-x86-online.exe_ and install:
+Download the latest [online installer](https://download.qt.io/official\_releases/online\_installers/) named _qt-unified-windows-x64-online.exe_ and install:
 
-```aspnet
-.\qt-unified-windows-x86-4.1.1-online.exe install qt.qt5.5152.win64_msvc2017_64 qt.tools.cmake.win64 qt.tools.qtcreator `
+{% code title="From an elevated PowerShell" %}
+```powershell
+.\qt-unified-windows-x64-4.4.1-online.exe install qt.qt5.5152.win64_msvc2019_64 qt.tools.qtcreator `
     --root C:\Qt `
     --auto-answer telemetry-question=No --accept-licenses --default-answer --accept-obligations --confirm-command `
     --email QT_EMAIL `
     --pw QT_PW
 ```
+{% endcode %}
 
 {% hint style="info" %}
 Update the email (_QT\_EMAIL_) and password (_QT\_PW_) accordingly
@@ -42,7 +44,7 @@ Update the email (_QT\_EMAIL_) and password (_QT\_PW_) accordingly
 
 ## CMake
 
-Download and install [CMake](https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1-windows-x86\_64.msi).
+Download and install [CMake](https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1-windows-x86\_64.msi). Make sure to add CMake to the system PATH.
 
 <details>
 
@@ -80,6 +82,7 @@ cd blaze
 mkdir build
 cd build 
 cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DBLAZE_BLAS_MODE=OFF -DUSE_LAPACK=OFF -DBLAZE_CACHE_SIZE_AUTO=OFF .. 
+cmake --build .
 cmake --install .
 ```
 

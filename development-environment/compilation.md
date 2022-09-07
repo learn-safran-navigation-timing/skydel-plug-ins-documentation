@@ -22,8 +22,6 @@ In Qt Creator, open the **CMakeLists.txt** file from the root  folder:
 {% endtab %}
 {% endtabs %}
 
-<img src="../.gitbook/assets/file.drawing (1).svg" alt="" class="gitbook-drawing">
-
 ### Command Line
 
 {% tabs %}
@@ -36,13 +34,16 @@ make -j4 install
 {% endtab %}
 
 {% tab title="Windows" %}
+{% code title="From the Command Prompt" %}
 ```
 mkdir build
 cd build
-& 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat'
+call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
 cmake -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+cmake --build .
 cmake --install .
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
