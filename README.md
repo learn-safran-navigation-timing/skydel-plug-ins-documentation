@@ -10,7 +10,7 @@ Are you having trouble figuring out how plug-ins are integrated in Skydel? This 
 
 ## SDK and Examples on GitHub
 
-The source code located on [GitHub](https://github.com/learn-orolia/skydel-plug-ins) includes the software development kit \(SDK\) and multiple plug-in examples.
+The source code located on [GitHub](https://github.com/learn-orolia/skydel-plug-ins) includes the software development kit (SDK) and multiple plug-in examples.
 
 ## Contributing
 
@@ -18,4 +18,4 @@ Would you like your plug-in to be featured in the Skydel Plug-ins GitHub reposit
 
 ## Support
 
-Do you have questions? Let us know on the [Learn Orolia](https://learn.orolia.com/) forum!
+Do you have questions? Let us know on the [Learn Safran Navigation Timing](https://learn.safran-navigation-timing.com/) forum!
