@@ -88,11 +88,3 @@ cd cmake-3.22.1
 make -j4
 sudo make install 
 ```
-
-## Blaze
-
-```
-git clone https://github.com/parsa/blaze
-cd blaze && mkdir build && cd build
-cmake -DBLAZE_BLAS_MODE=ON .. && sudo make install
-```
