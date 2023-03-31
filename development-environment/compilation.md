@@ -1,12 +1,12 @@
 # Compilation
 
-## Source Code
+## Plug-in  SDK Compilation
+
+### Source Code
 
 ```
-git clone https://github.com/learn-orolia/skydel-plug-ins
+git clone https://github.com/learn-safran-navigation-timing/skydel-plug-ins
 ```
-
-## Compilation
 
 ### Qt Creator
 
@@ -14,11 +14,11 @@ In Qt Creator, open the **CMakeLists.txt** file from the root  folder:
 
 {% tabs %}
 {% tab title="Ubuntu" %}
-<img src="../.gitbook/assets/file.drawing (1).svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.drawing.svg" alt="" class="gitbook-drawing">
 {% endtab %}
 
 {% tab title="Windows" %}
-<img src="../.gitbook/assets/file.drawing.svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.drawing (1).svg" alt="" class="gitbook-drawing">
 {% endtab %}
 {% endtabs %}
 
@@ -29,7 +29,8 @@ In Qt Creator, open the **CMakeLists.txt** file from the root  folder:
 <pre><code>mkdir build &#x26;&#x26; cd build
 cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
 <strong>cmake --build .
-</strong><strong>sudo cmake --install .</strong></code></pre>
+</strong><strong>sudo cmake --install .
+</strong></code></pre>
 {% endtab %}
 
 {% tab title="Windows" %}
@@ -48,11 +49,26 @@ cmake --install .
 
 #### Additional CMake Arguments
 
-| Argument                       | Description                                    | Default Value                         |
-| ------------------------------ | ---------------------------------------------- | ------------------------------------- |
-| `CMAKE_INSTALL_PREFIX`         | Destination folder of the Plug-ins SDK         | -                                     |
-| `BUILD_SKYDEL_PLUGIN_EXAMPLES` | Whether the examples should be compiled or not | TRUE                                  |
-| `PLUGIN_INSTALL_DIR`           | Destination folder of the examples             | _$HOME/Documents/Skydel-SDX/Plug-ins_ |
+| Argument               | Description                            | Default Value                         |
+| ---------------------- | -------------------------------------- | ------------------------------------- |
+| `CMAKE_INSTALL_PREFIX` | Destination folder of the Plug-ins SDK | -                                     |
+| `PLUGIN_INSTALL_DIR`   | Destination folder of the examples     | _$HOME/Documents/Skydel-SDX/Plug-ins_ |
+
+
+
+## Plug-in Examples Compilation
+
+### Source Code
+
+```
+git clone https://github.com/learn-safran-navigation-timing/skydel-example-plugins
+```
+
+### Compilation
+
+See [#plug-in-sdk-compilation](compilation.md#plug-in-sdk-compilation "mention").
+
+The compiled plugin examples will be located in your _build folder / source / plugin-name_ as a _.so_ or _.dll_ file.
 
 ## Using the SDK in an Other CMake Project
 
@@ -62,3 +78,4 @@ After installing the SDK, It can be imported into your own CMake project by addi
 find_package(SkydelPlugin)
 target_link_libraries(MyPlugin PUBLIC Skydel::SkydelPlugin)
 ```
+

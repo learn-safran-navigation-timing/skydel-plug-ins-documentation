@@ -8,7 +8,7 @@
 * [Windows 10](development-environment/windows-10.md)
 * [Compilation](development-environment/compilation.md)
 * [Featured Plugins](development-environment/featured-plugins/README.md)
-  * [IMU Plugin](development-environment/featured-plugins/imu-plugin.md)
+  * [IMU Plug-in](development-environment/featured-plugins/imu-plug-in.md)
 
 ## Plug-in Development
 

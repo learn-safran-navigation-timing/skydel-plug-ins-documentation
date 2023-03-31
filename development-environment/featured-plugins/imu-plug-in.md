@@ -1,6 +1,6 @@
-# IMU Plugin
+# IMU Plug-in
 
-To compile the IMU plugin, you will need to install the default development environment and ensure the following dependencies are also installed.\
+To compile the [IMU plug-in](https://github.com/learn-safran-navigation-timing/skydel-imu-plugin), you will need to install the default development environment and ensure the following dependencies are also installed.\
 
 
 ## Blaze
