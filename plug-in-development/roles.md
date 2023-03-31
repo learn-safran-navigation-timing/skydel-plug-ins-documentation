@@ -250,7 +250,7 @@ See the plug-in example [transmitter\_observer\_plugin](https://github.com/learn
 ## SkydelLicensingInterface
 
 {% hint style="warning" %}
-To use this role and see an example, contact Orolia Canada's technical support.
+To use this role and see an example, contact Safran Trusted 4D Canada's technical support.
 {% endhint %}
 
 ## SkydelRapiInterface
