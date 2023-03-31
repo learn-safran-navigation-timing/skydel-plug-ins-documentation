@@ -14,11 +14,11 @@ In Qt Creator, open the **CMakeLists.txt** file from the root  folder:
 
 {% tabs %}
 {% tab title="Ubuntu" %}
-<img src="../.gitbook/assets/file.drawing.svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.drawing (1).svg" alt="" class="gitbook-drawing">
 {% endtab %}
 
 {% tab title="Windows" %}
-<img src="../.gitbook/assets/file.drawing (1).svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.drawing.svg" alt="" class="gitbook-drawing">
 {% endtab %}
 {% endtabs %}
 

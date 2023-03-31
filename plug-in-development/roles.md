@@ -59,7 +59,7 @@ When loading a configuration file, Skydel will automatically instantiate all sav
 
 ### Example
 
-See the plug-in example [simple\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/simple\_plugin) for more information. It covers:
+See the plug-in example [simple\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/simple\_plugin) for more information. It covers:
 
 * Creating a user interface
 * Sending notification messages
@@ -86,7 +86,7 @@ During simulation initialization, Skydel will provide opportunity for plug-in in
 
 ### Example
 
-See the plug-in example [position\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/position\_observer\_plugin) for more information. It covers:
+See the plug-in example [position\_observer\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/position\_observer\_plugin) for more information. It covers:
 
 * Receiving real time position data
 * Updating the user interface
@@ -141,7 +141,7 @@ Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-int
 
 ### Example
 
-See the plug-in example [hil\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/hil\_observer\_plugin) for more information. It covers:
+See the plug-in example [hil\_observer\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/hil\_observer\_plugin) for more information. It covers:
 
 * Receiving HIL data in real time
 * Updating the user interface
@@ -178,7 +178,7 @@ Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-int
 
 ### Example
 
-See the plug-in example [radio\_time\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/radio\_time\_observer\_plugin) for more information. It covers:
+See the plug-in example [radio\_time\_observer\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/radio\_time\_observer\_plugin) for more information. It covers:
 
 * Receiving the radio time data in real time
 * Updating the user interface
@@ -240,7 +240,7 @@ Same as `SkydelPositionObsereverInterface`; see [here](roles.md#dynamic-user-int
 
 ### Example
 
-See the plug-in example [transmitter\_observer\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/transmitter\_observer\_plugin) for more information. It covers:
+See the plug-in example [transmitter\_observer\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/transmitter\_observer\_plugin) for more information. It covers:
 
 * Receiving real time spoofers/interferences data
 * Updating the user interface
@@ -265,7 +265,7 @@ At anytime, a plug-in instance can send a command with the `post` method. It's p
 
 ### Example
 
-See the plug-in example [rapi\_plugin](https://github.com/learn-orolia/skydel-plug-ins/tree/master/examples/rapi\_plugin) for more information. It covers:
+See the plug-in example [rapi\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/rapi\_plugin) for more information. It covers:
 
 * Inheriting `SkydelRapiAccess` to facilitate `post` call
 * Posting commands to Skydel
