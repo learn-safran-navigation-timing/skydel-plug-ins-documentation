@@ -116,12 +116,44 @@ During simulation, Skydel will send raw data at 1 Hz via the `pushRawData` metho
 | svID      | Space vehicle identifier | -                         |
 | rawDatas  | Raw data by signal       | vector of `SignalRawData` |
 
-| SignalRawData   | Definition                                                | Unit            |
-| --------------- | --------------------------------------------------------- | --------------- |
-| signal          | Signal identifier                                         | Enum `Signal`   |
-| svElapsedTimeMs | Elapsed time of the SV at current simulation elapsed time | millisecond     |
-| pseudorange     | Pseudorange                                               | meter           |
-| adr             | Accumulated doppler range                                 | number of cycle |
+
+
+| SignalRawData               | Definition                                                                                                                                                               | Unit            |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- |
+| svID                        | Space vehicle identifier                                                                                                                                                 | -               |
+| signal                      | Signal identifier                                                                                                                                                        | Enum `Signal`   |
+| svElapsedTimeMs             | Elapsed time of the SV at current simulation elapsed time                                                                                                                | millisecond     |
+| position (x,y,z)            | ECEF coordinates (meters) of the origin of the transmitted signal (satellite’s antenna phase center).                                                                    | meter           |
+| positionError (x,y,z)       | Error on the position                                                                                                                                                    | meter           |
+| range                       | Geometrical distance between the satellite’s and receiver’s antennas                                                                                                     | meter           |
+| psr                         | Pseudorange                                                                                                                                                              | meter           |
+| adr                         | Accumulated doppler range                                                                                                                                                | number of cycle |
+| clockCorrection             | Satellite's Clock Correction                                                                                                                                             | second          |
+| clockNoise                  | Additional clock error not accounted for in navigation message                                                                                                           | second          |
+| deltaAf0                    | Clock offset                                                                                                                                                             | second          |
+| deltaAf1                    | Clock drift                                                                                                                                                              | second/second   |
+| ionoCorrection              | Ionospheric corrections                                                                                                                                                  | meter           |
+| tropoCorrection             | Tropospheric corrections                                                                                                                                                 | meter           |
+| psrOffset                   | Pseudorange offset                                                                                                                                                       | meter           |
+| receiverAntennaAzimuth      | Satellite’s azimuth from the receiver’s antenna position                                                                                                                 | radian          |
+| receiverAntennaElevation    | Satellite’s elevation from the receiver’s antenna position                                                                                                               | radian          |
+| receiverAntennaGain         | Receiver’s antenna gain                                                                                                                                                  | dBi             |
+| svAntennaAzimuth            | Receiver’s azimuth from the satellite’s antenna position                                                                                                                 | radian          |
+| svAntennaElevation          | Receiver’s elevation from the satellite’s antenna position                                                                                                               | radian          |
+| relativePowerLevel          | Signal’s relative power level corresponding to the sum of the global power offset, the user’s power offset, the receiver’s antenna gain and the satellite’s antenna gain | dB              |
+| doplerFrequency             | Doppler frequency due to satellites' and receivers' antennas dynamics'                                                                                                   | hertz           |
+| psrChangeRate               | Pseudorange rate due to satellites' and receivers' antennas dynamics'                                                                                                    | meter/second    |
+| echoPowerLoss               | Multipath power offset relative to Line of Sight (LOS) signal                                                                                                            | dB              |
+| echoDopplerOffset           | Multipath frequency offset relative to LOS signal                                                                                                                        | hertz           |
+| echoCarrierPhaseOffset      | Initial phase offset in multipath relative to LOS signal                                                                                                                 | radian          |
+| echoPsrOffset               | Multipath pseudorange offset                                                                                                                                             | meter           |
+| receiverCarrierPhaseOffset  | Phase offset caused by the receiver’s antenna phase pattern                                                                                                              | radian          |
+| satelliteCarrierPhaseOffset | Phase offset caused by the satellite’s antenna phase pattern                                                                                                             | radian          |
+| gpsTow                      | GPS time of week                                                                                                                                                         | second          |
+| gpsWeekNumber               | GPS week number                                                                                                                                                          | -               |
+| sbas                        | SBAS time of the day                                                                                                                                                     | second          |
+| calibrationOffset           | Offset applied to the signal during Wavefront simulation. Used to compensate for hardware differences between elements                                                   | meter           |
+| psrSatTime                  | The elapsed time of the simulation when the signal was emitted from the satellite                                                                                        | millisecond     |
 
 ### Dynamic User Interface
 
