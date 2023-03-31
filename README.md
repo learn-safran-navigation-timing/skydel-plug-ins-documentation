@@ -8,9 +8,13 @@ How can you begin working on your Skydel plug-in? The first step is to follow th
 
 Are you having trouble figuring out how plug-ins are integrated in Skydel? This [page ](plug-ins-in-skydel/using-plugins.md)explains it all.
 
-## SDK and Examples on GitHub
+## Source Code
 
-The source code located on [GitHub](https://github.com/learn-safran-navigation-timing/skydel-plug-ins) includes the software development kit (SDK), and multiple plug-in examples can be found in this [GitHub](https://github.com/learn-safran-navigation-timing/skydel-example-plugins) repository.
+Here's a few interesting GitHub repository:
+
+* [Skydel Plug-in Software Development Kit(SDK)](https://github.com/learn-safran-navigation-timing/skydel-plug-ins)
+* [Multiple Skydel Plug-in Examples](https://github.com/learn-safran-navigation-timing/skydel-example-plugins)
+* [Template Plugin to easily get started](https://github.com/learn-safran-navigation-timing/skydel-template-plugin)
 
 ## Contributing
 
