@@ -10,16 +10,17 @@ description: >-
 
 Download latest Build Tools for Visual Studio 2019 [online installer](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2019-and-other-products) and install C++ build tools.
 
-![](../.gitbook/assets/windows\_msvc.svg)
+<img src="../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
 
 <details>
 
-<summary>Version should at least be 19.28.29924 for <code>cl</code></summary>
+<summary>Version should at least be 19.29.30148 for <code>cl</code></summary>
+
+Please note that the version in the execution path of cl might be different on newer versions.
 
 ```
-# Path might be different on newer versions
-C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.28.29910\bin\Hostx64\x64\cl.exe
-> Microsoft (R) C/C++ Optimizing Compiler Version 19.28.29924 for x64
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64\cl.exe
+> Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30148 for x64
 ```
 
 </details>
@@ -83,11 +84,11 @@ Download and install latest [git](https://gitforwindows.org).
 
 <details>
 
-<summary>Version should at least be 2.30.2 for <code>git</code></summary>
+<summary>Version should at least be 2.40.0 for <code>git</code></summary>
 
 ```
 git --version
-> git version 2.30.2.windows.1
+> git version 2.40.0.windows.1
 ```
 
 </details>
