@@ -8,6 +8,7 @@ To compile the [IMU plug-in](https://github.com/learn-safran-navigation-timing/s
 ### Ubuntu
 
 ```
+sudo apt install liblapack-dev
 git clone https://github.com/parsa/blaze
 cd blaze && mkdir build && cd build
 cmake -DBLAZE_BLAS_MODE=ON .. && sudo make install

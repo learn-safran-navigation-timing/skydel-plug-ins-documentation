@@ -49,10 +49,7 @@ cmake --install .
 
 #### Additional CMake Arguments
 
-| Argument               | Description                            | Default Value                         |
-| ---------------------- | -------------------------------------- | ------------------------------------- |
-| `CMAKE_INSTALL_PREFIX` | Destination folder of the Plug-ins SDK | -                                     |
-| `PLUGIN_INSTALL_DIR`   | Destination folder of the examples     | _$HOME/Documents/Skydel-SDX/Plug-ins_ |
+<table><thead><tr><th width="226.49302936102077">Argument</th><th>Description</th><th width="150">Default Value</th></tr></thead><tbody><tr><td><code>CMAKE_INSTALL_PREFIX</code></td><td>Destination folder of the Plug-ins SDK</td><td>-</td></tr><tr><td><code>PLUGIN_INSTALL_DIR</code></td><td>Destination folder of the examples</td><td><em>$HOME/Documents/Skydel-SDX/Plug-ins</em></td></tr></tbody></table>
 
 
 

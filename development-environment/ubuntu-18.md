@@ -11,7 +11,7 @@ description: >-
 ```
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev uuid-dev git libssl-dev ninja-build
+sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 uuid-dev git libssl-dev ninja-build
 ```
 
 <details>
@@ -21,7 +21,6 @@ sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 liblapack-dev 
 * build-essential -> GCC and G++ 11.2.0
 * libgl1-mesa-dev -> OpenGL
 * libxcb-xinerama0 -> Qt installer
-* liblapack-dev -> Blaze
 * uuid-dev -> Skydel remote API
 * git -> Source code
 * libssl-dev -> CMake compilation
