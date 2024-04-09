@@ -8,9 +8,9 @@ description: >-
 
 ## MSVC
 
-Download latest Build Tools for Visual Studio 2019 [online installer](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2019-and-other-products) and install C++ build tools.
+Download latest Build Tools for Visual Studio 2019 [online installer](https://learn.microsoft.com/en-us/visualstudio/releases/2019/history#release-dates-and-build-numbers) and install C++ build tools.
 
-<img src="../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
+<figure><img src="../.gitbook/assets/file.drawing.svg" alt=""><figcaption></figcaption></figure>
 
 <details>
 

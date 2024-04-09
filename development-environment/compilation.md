@@ -18,7 +18,7 @@ In Qt Creator, open the **CMakeLists.txt** file from the root  folder:
 {% endtab %}
 
 {% tab title="Windows" %}
-<img src="../.gitbook/assets/file.drawing.svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.drawing (2).svg" alt="" class="gitbook-drawing">
 {% endtab %}
 {% endtabs %}
 
