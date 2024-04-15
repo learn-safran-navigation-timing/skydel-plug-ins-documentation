@@ -1,9 +1,9 @@
 ---
-description: This section explains the interaction between Skydel and a plug-in instance at instantiation.
+description: >-
+  This section explains the interaction between Skydel and a plug-in when
+  enabling a plug-in.
 ---
 
-# Instantiation
+# Enabling
 
-Instantiating a plug-in manually or via the loading of the configuration file is the same, except for the `setConfiguration` call that only occurs in the second case.
-
-![Plug-in Instantiation Sequence](../.gitbook/assets/plugin_instantiation_sequence.png)
+![Sequence When Enabling a Plug-in](<../.gitbook/assets/plugins\_in\_skydel (1).png>)

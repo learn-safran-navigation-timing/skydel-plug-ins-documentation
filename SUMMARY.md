@@ -7,13 +7,20 @@
 * [Ubuntu 22.04](development-environment/ubuntu-18.md)
 * [Windows 10](development-environment/windows-10.md)
 * [Compilation](development-environment/compilation.md)
-* [Featured Plugins](development-environment/featured-plugins/README.md)
-  * [IMU Plug-in](development-environment/featured-plugins/imu-plugin.md)
+* [Featured Plug-ins](development-environment/featured-plug-ins/README.md)
+  * [IMU Plug-in](development-environment/featured-plug-ins/imu-plug-in.md)
 
 ## Plug-in Development
 
-* [Roles](plug-in-development/roles.md)
-* [Instantiation](plug-in-development/instantiation.md)
+* [Roles](plug-in-development/roles/README.md)
+  * [Core](plug-in-development/roles/core.md)
+  * [RAPI](plug-in-development/roles/rapi.md)
+  * [Position Observer](plug-in-development/roles/position-observer.md)
+  * [Raw Data Observer](plug-in-development/roles/raw-data-observer.md)
+  * [HIL Observer](plug-in-development/roles/hil-observer.md)
+  * [Radio Time Observer](plug-in-development/roles/radio-time-observer.md)
+  * [Transmitter Observer](plug-in-development/roles/transmitter-observer.md)
+* [Enabling](plug-in-development/instantiation.md)
 * [Runtime](plug-in-development/runtime.md)
 * [Time Synchronization](plug-in-development/time-synchronization.md)
 

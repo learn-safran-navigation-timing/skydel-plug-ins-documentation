@@ -1,9 +1,9 @@
 ---
-description: This section explains the interaction between Skydel and a plug-in instance at runtime.
+description: This section explains the interaction between Skydel and a plug-in at runtime.
 ---
 
 # Runtime
 
-![Skydel Interaction with Plug-in Instance During Simulator Initializing State](../.gitbook/assets/plugin_runtime_init.png)
+![Skydel Interaction with a Plug-in During Simulator Initializing State](<../.gitbook/assets/plugins\_in\_skydel (2).png>)
 
-![Plug-in Instance During Simulator Streaming RF State](../.gitbook/assets/plugin_runtime_streaming.png)
+![Plug-in During Simulator Streaming RF State](<../.gitbook/assets/plugins\_in\_skydel (3).png>)
