@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Custom signals are now integrated into Skydel plug-ins. This step-by-step guide will help you migrate your legacy custom signal code to the plug-in SDK.
+Custom signals are now integrated into plug-ins since Skydel version **24.12**. This step-by-step guide will help you migrate your legacy custom signal code to the plug-in SDK.
 
 ## Prerequisites
 
