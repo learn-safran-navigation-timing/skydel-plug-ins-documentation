@@ -28,3 +28,7 @@
 ## Plug-ins in Skydel
 
 * [Using Plug-ins](plug-ins-in-skydel/using-plugins.md)
+
+## Legacy Custom Signal
+
+* [Migration](legacy-custom-signal/migration.md)
