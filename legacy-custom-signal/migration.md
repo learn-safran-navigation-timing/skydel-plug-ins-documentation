@@ -14,7 +14,7 @@ Before you begin, ensure you have completed the following:
 
 ## Migration
 
-The interfaces required for custom signals remain largely the same but are now integrated into the plug-in SDK. In this guide, we'll use the custom signal GPS CA as an example. The steps outlined here are applicable to any custom signal. The GPS CA example is located in [_example\_gps\_ca_](https://github.com/learn-safran-navigation-timing/skydel-custom-signal/tree/main/example_gps_ca) of the legacy project, and [_source / custom\_signals / example\_gps\_ca_](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/main/source/custom_signals/example_gps_ca) in the new project. A few differences can be observed if we compare both project, here are the outlines.
+The interfaces required for custom signals remain largely the same but are now integrated into the plug-in SDK. In this guide, we'll use the custom signal GPS CA as an example. The steps outlined here are applicable to any custom signal. The GPS CA example is located in [_example\_gps\_ca_](https://github.com/learn-safran-navigation-timing/skydel-custom-signal/tree/main/example_gps_ca) of the legacy project, and [_source / custom\_signals / example\_gps\_ca_](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/custom_signals/example_gps_ca) in the new project. A few differences can be observed if we compare both project, here are the outlines.
 
 Here is a compressed archive containing the code before and after the migration. You can use a "diff " tool like [WinMerge](https://winmerge.org/?lang=en) to better visualize the differences between the legacy and the new approach.
 
