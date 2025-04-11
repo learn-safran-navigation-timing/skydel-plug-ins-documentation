@@ -11,19 +11,19 @@ description: >-
 ```
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 uuid-dev git libssl-dev ninja-build
+sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 uuid-dev git cmake ninja-build
 ```
 
 <details>
 
 <summary>Packages detailed information</summary>
 
-* build-essential -> GCC and G++ 11.2.0
+* build-essential -> GCC and G++ 11.4.0
 * libgl1-mesa-dev -> OpenGL
 * libxcb-xinerama0 -> Qt installer
 * uuid-dev -> Skydel remote API
 * git -> Source code
-* libssl-dev -> CMake compilation
+* cmake -> Compilation
 * ninja-build -> Compilation
 
 </details>
@@ -32,14 +32,27 @@ sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 uuid-dev git l
 
 <details>
 
-<summary>Version should be 11.2.0 for <code>gcc</code> and <code>g++</code></summary>
+<summary>Version should be 11.4.0 for <code>gcc</code> and <code>g++</code></summary>
 
 ```
 gcc --version
-> gcc (Ubuntu 11.2.0-19ubuntu1) 11.2.0
+> gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
 
 g++ --version
-> g++ (Ubuntu 11.2.0-19ubuntu1) 11.2.0
+> g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+```
+
+</details>
+
+## CMake
+
+<details>
+
+<summary>Version should be 3.22.1 for <code>cmake</code></summary>
+
+```
+cmake --version
+> cmake version 3.22.1
 ```
 
 </details>
@@ -77,13 +90,14 @@ rm /tmp/qt-installer.run
 Update the email (_QT\_EMAIL_) and password (_QT\_PW_) accordingly
 {% endhint %}
 
-## CMake
+<details>
+
+<summary>Version should be 5.15.2 for <code>Qt</code></summary>
 
 ```
-wget https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1.tar.gz
-tar -xzvf cmake-3.22.1.tar.gz
-cd cmake-3.22.1
-./bootstrap
-make -j4
-sudo make install 
+/opt/Qt/5.15.2/gcc_64/bin/qmake --version
+> QMake version 3.1
+> Using Qt version 5.15.2 in /opt/Qt/5.15.2/gcc_64/lib
 ```
+
+</details>

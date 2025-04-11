@@ -4,6 +4,10 @@ description: This section explains the interaction between Skydel and a plug-in 
 
 # Runtime
 
-![Skydel Interaction with a Plug-in During Simulator Initializing State](<../.gitbook/assets/plugins\_in\_skydel (2).png>)
+The following diagram summarizes the sequence and order of the interactions during the Simulator Initializing State. The dotted lines represent objects that the plug-in returns to Skydel. For more details, see the [roles](roles/ "mention") section.
 
-![Plug-in During Simulator Streaming RF State](<../.gitbook/assets/plugins\_in\_skydel (3).png>)
+![Skydel Interactions with a Plug-in During Simulator Initializing State](<../.gitbook/assets/plugins_in_skydel (2).png>)
+
+The following diagram summarizes the sequence and order of the interactions during the Simulator Streaming RF State. For more details, see the [roles](roles/ "mention") section.
+
+![Skydel Interfactions with a Plug-in During Simulator Streaming RF State](<../.gitbook/assets/plugins_in_skydel (3).png>)

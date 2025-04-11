@@ -55,11 +55,11 @@ Implementors should be careful not to rely on global uniqueness of ID strings. A
 
 ## Dynamic User Interface
 
-Same as `SkydelPositionObsereverInterface`; see [here](transmitter-observer.md#dynamic-user-interface) for more detail.
+Same as `SkydelPositionObsereverInterface`, see [#dynamic-user-interface](position-observer.md#dynamic-user-interface "mention") of [position-observer.md](position-observer.md "mention") for more details.
 
 ## Example
 
-See the plug-in example [transmitter\_observer\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/transmitter\_observer\_plugin) for more information. It covers:
+See the plug-in example [transmitter\_observer\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/transmitter_observer_plugin) for more information. It covers:
 
 * Receiving real time spoofers/interferences data
 * Updating the user interface

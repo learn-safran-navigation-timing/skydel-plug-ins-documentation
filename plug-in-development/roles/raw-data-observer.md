@@ -70,4 +70,4 @@ During simulation, Skydel will send raw data at 1 Hz via the `pushRawData` metho
 
 ## Dynamic User Interface
 
-Same as `SkydelPositionObsereverInterface`, see [here](raw-data-observer.md#dynamic-user-interface) for more detail.
+Same as `SkydelPositionObsereverInterface`, see [#dynamic-user-interface](position-observer.md#dynamic-user-interface "mention") of [position-observer.md](position-observer.md "mention").

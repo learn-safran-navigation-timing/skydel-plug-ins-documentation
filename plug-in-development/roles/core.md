@@ -34,7 +34,7 @@ When enabling a plug-in, Skydel will create and give a `SkydelNotifierInterface*
 * Send 3 different types of notifications to Skydel via the `notify` method
 * Tell Skydel to change its state to Unsaved via the `setDirty` method
 
-<table data-full-width="false"><thead><tr><th width="146">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>INFO</code></td><td>[Default] Message logged in <em>simulator.log as</em> an <em>info</em></td></tr><tr><td><code>WARNING</code></td><td>Message logged in <em>simulator.log</em> and Skydel <em>Status Log</em> tab as a <em>warning</em></td></tr><tr><td><code>ERROR</code></td><td>Message logged in <em>simulator.log and</em> Skydel <em>Status Log</em> tab as an <em>error</em></td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="146" align="center">Type</th><th>Description</th></tr></thead><tbody><tr><td align="center"><code>INFO</code></td><td>[Default] Message logged in <em>simulator.log as</em> an <em>info</em></td></tr><tr><td align="center"><code>WARNING</code></td><td>Message logged in <em>simulator.log</em> and Skydel <em>Status Log</em> tab as a <em>warning</em></td></tr><tr><td align="center"><code>ERROR</code></td><td>Message logged in <em>simulator.log and</em> Skydel <em>Status Log</em> tab as an <em>error</em></td></tr></tbody></table>
 
 Sending an `ERROR` notification at runtime will cause the simulation to stop.
 
@@ -57,11 +57,13 @@ When loading a configuration file, Skydel will automatically restore the configu
 
 ## Simulation Initialization
 
-During the simulation initialization state, Skydel allows plug-ins to execute code before the simulation start via the `initialize` method.
+During the simulation initialization state, Skydel allows plug-ins to execute code before the simulation starts via the `initialize` method.
+
+Remote API clients cannot execute commands during Skydel's initialization state, but an exception is made for plug-ins within the initialize method. Although the simulator is technically in the _Started_ state, Skydel allows plug-ins to execute _Idle_ commands.
 
 ## Example
 
-See the plug-in example [simple\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/simple\_plugin) for more information. It covers:
+See the plug-in example [simple\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/simple_plugin) for more information. It covers:
 
 * Creating a user interface
 * Sending notification messages

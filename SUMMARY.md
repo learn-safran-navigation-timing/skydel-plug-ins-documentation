@@ -5,7 +5,7 @@
 ## Development Environment
 
 * [Ubuntu 22.04](development-environment/ubuntu-18.md)
-* [Windows 10](development-environment/windows-10.md)
+* [Windows 10 & 11](development-environment/windows-10.md)
 * [Compilation](development-environment/compilation.md)
 * [Featured Plug-ins](development-environment/featured-plug-ins/README.md)
   * [IMU Plug-in](development-environment/featured-plug-ins/imu-plug-in.md)

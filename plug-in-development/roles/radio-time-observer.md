@@ -10,7 +10,7 @@ description: >-
 
 During simulation initialization, Skydel will ask for a `SkydelRuntimeRadioTimeObserver*` from every plug-in via the `createRuntimeRadioTimeObserver` method. It is mandatory to give full ownership of the returned pointer to Skydel.
 
-During simulation, Skydel will send an estimate of the radio time at 1000 Hz via the `pushRadioTime` method with the following data structure:
+During simulation, Skydel will send an estimate of the radio time at 1000 Hz via the `pushRadioTime` method with the following data structure. For more details on the usage of this information, see the [time-synchronization.md](../time-synchronization.md "mention") section.
 
 | RadioTimeEstimate  | Definition                                                | Unit                     |
 | ------------------ | --------------------------------------------------------- | ------------------------ |
@@ -31,11 +31,11 @@ Returns an integer number of microseconds until RF corresponding to the given `e
 
 ## Dynamic User Interface
 
-Same as `SkydelPositionObsereverInterface`; see [here](radio-time-observer.md#dynamic-user-interface) for more detail.
+Same as `SkydelPositionObsereverInterface`, see [#dynamic-user-interface](position-observer.md#dynamic-user-interface "mention") of [position-observer.md](position-observer.md "mention") for more details.
 
 ## Example
 
-See the plug-in example [radio\_time\_observer\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/radio\_time\_observer\_plugin) for more information. It covers:
+See the plug-in example [radio\_time\_observer\_plugin](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/tree/master/source/radio_time_observer_plugin) for more information. It covers:
 
 * Receiving the radio time data in real time
 * Updating the user interface
