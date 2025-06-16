@@ -10,13 +10,13 @@ The Skydel real-time engine performs a massive amount of calculations using the 
 
 The Constellation Worker calculates the satellites position, the pseudoranges, the propagation lost, the navigation messages, etc. In short, this is the worker handling the scenario and the user inputs. The Modulation Worker performs the modulation using the GPUs and finally, the Streamer Worker transfers the modulated signals to the radios so it can be broadcasted to the desired frequencies.
 
-![Skydel Workers](../.gitbook/assets/workers.png)
+<picture><source srcset="../.gitbook/assets/time_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/time.png" alt="Skydel Workers"></picture>
 
 When the user changes the power level of a signal in the GUI, it is handled by the engine in the constellation worker. The effect of the user input is propagated downstream to the modulation and streamer workers. The time it takes for the user input to pass through the workers and to the radio transmitting the RF signal is called the system latency. The latency is configurable and is usually adjusted based on the need for low latency and the performance of the hardware. It can be as high as 200ms or as low as 5ms. What it means is while the radio is broadcasting the chunk for time T, the constellation worker could be computing the chunk corresponding to time T+Latency. The constellation worker runs as fast as it can and it is throttled to not exceed the radio time by more than the configured latency. The radio consumes the chunks at a very stable rate defined by a precise reference clock (10MHz/PPS).
 
 A plug-in runs in a dedicated thread (worker), and it is connected to the constellation worker. The natural time reference for the plug-in is the time associated to the chunk being computed by the constellation worker.
 
-![Time References](../.gitbook/assets/Time\_Ref.png)
+<picture><source srcset="../.gitbook/assets/cs_gitbook-time_sync_sequence_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/cs_gitbook-time_sync_sequence_light.png" alt="Time References"></picture>
 
 When the plug-in uses the Real Time Positions role (SkdelPositionObserverInterface) to get the simulated position, it is paired with the elapsed simulation time corresponding to the current chunk used in the constellation worker. This time is in the future with regards to the actual RF signal coming out of the radio and is expressed in milliseconds since the start of the scenario.
 

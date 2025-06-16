@@ -12,7 +12,7 @@ A plug-in is a shared library (_.so_ or _.dll_) that implements some of the inte
 
 Make sure you copy the plug-in (_.so_ or _.dll_ file) into the _Skydel Data Folder / Plug-ins._ When Skydel is launched, it will search that folder in order to list all the available plug-ins.
 
-![Skydel's Plug-in Search at Startup](../.gitbook/assets/plugin_search.png)
+<picture><source srcset="../.gitbook/assets/cs_gitbook-using_plugins_load_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/cs_gitbook-using_plugins_load_light.png" alt="Skydel&#x27;s Plug-in Search at Startup"></picture>
 
 ## How to enable/disable a plug-in in Skydel?
 
