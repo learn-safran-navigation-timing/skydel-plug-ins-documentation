@@ -87,7 +87,8 @@ The changes to the custom signal implementation are primarily naming-related. Th
 * `ICustomSignal` → `SkydelCustomSignalInterface`
 * `ICustomSignalCode` → `SkydelCustomSignalCode`
 * `ICustomSignalNavMsg` → `SkydelCustomSignalNavMsg`
-* `CSInitData` → `Sdx::CS::InitData`
+* `CSInitData` → `Sdx::CS::InitializationDatas`
+* `CSConstellation` → `Sdx::CS::ConstellationDatas`
 
 ### <mark style="color:yellow;">Changes - custom\_ca.cpp</mark>
 
@@ -131,10 +132,10 @@ public:
   inline void initialize() override {}
 
   // SkydelCustomSignalFactoryInterface
-  inline SkydelCustomSignalInterface* createCustomSignal(const Sdx::CS::InitData& data) override
+  inline SkydelCustomSignalInterface* createCustomSignal(const Sdx::CS::InitializatinDatas& datas) override
   {
     // Returns the custom signal implementation
-    return new CustomCA(data);
+    return new CustomCA(datas);
   };
 
 signals:
@@ -152,6 +153,14 @@ Only the constructor is implemented in the source file to ensure that the source
 ### <mark style="color:green;">New - custom\_ca.json</mark>
 
 Every Skydel plug-in requires a metadata file to specify its generic name, description, and version. Refer to any plug-in example for more details.
+
+## Legacy Structures and Backward Compatibility
+
+Since version 2 of the `SkydelCustomSignalFactoryInterface`, information is shared with custom signal plug-ins using key/value maps. In version 1, this information was provided through fixed structures.
+
+To ease the migration for users relying on the older interface, the `skydel_custom_signal_types_bridge.h` file was added to the SDK. This header provides helper functions to convert the new map based format into the legacy structure format. It also includes examples demonstrating how to access specific information from the new structure.
+
+TODO : ajouter un bout de code qui montre un example de conversion de nouvelles données vers les structures legacy, par example ConstellationDatas vers std::vector\<Ephemeris>.
 
 ## Usage in Skydel
 

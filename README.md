@@ -10,7 +10,7 @@ Are you having trouble figuring out how plug-ins are integrated in Skydel? This 
 
 ## Source Code
 
-Here's a few interesting GitHub repository:
+Here's a few interesting GitHub repositories:
 
 * [Skydel Plug-in Software Development Kit (SDK)](https://github.com/learn-safran-navigation-timing/skydel-plug-ins)
 * [Skydel Plug-in Examples](https://github.com/learn-safran-navigation-timing/skydel-example-plugins)

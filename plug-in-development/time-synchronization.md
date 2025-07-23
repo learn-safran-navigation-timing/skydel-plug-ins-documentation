@@ -1,3 +1,7 @@
+---
+description: This section explains time synchronization in plug-ins.
+---
+
 # Time Synchronization
 
 The plug-in SDK includes functions to get the time in the simulation at difference reference points and depending on the desired synchronization, it may require a deeper understanding of the underlying architecture of the Skydel engine.

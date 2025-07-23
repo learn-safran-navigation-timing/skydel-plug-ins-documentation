@@ -21,9 +21,15 @@
   * [Radio Time Observer](plug-in-development/roles/radio-time-observer.md)
   * [Transmitter Observer](plug-in-development/roles/transmitter-observer.md)
   * [Simulator State Observer](plug-in-development/roles/simulator-state-observer.md)
+  * [Custom Signal Factory](plug-in-development/roles/custom-signal-factory/README.md)
+    * [Structures](plug-in-development/roles/custom-signal-factory/structures.md)
 * [Enabling](plug-in-development/instantiation.md)
 * [Runtime](plug-in-development/runtime.md)
 * [Time Synchronization](plug-in-development/time-synchronization.md)
+
+***
+
+* [Custom Signal](custom-signal.md)
 
 ## Plug-ins in Skydel
 

@@ -11,7 +11,7 @@ description: >-
 
 Download latest Build Tools for Visual Studio 2019 [online installer](https://learn.microsoft.com/en-us/visualstudio/releases/2019/history#release-dates-and-build-numbers) and install C++ build tools.
 
-<img src="../.gitbook/assets/file.excalidraw (1).svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw (1) (1).svg" alt="" class="gitbook-drawing">
 
 <details>
 
