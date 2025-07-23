@@ -8,9 +8,9 @@ description: >-
 
 ## Real Time Raw Data
 
-During simulation initialization, Skydel will ask for a `SkydelRuntimeRawDataObserver*` from every plug-in via the `createRuntimeRawDataObserver` method. It's mandatory to fully give the ownership of the returned pointer to Skydel. The create function also shares an ID to String map, for all enabled Constellations, and for all enabled Signals.
+During simulation initialization, Skydel calls `getUpdateIntervalMs` to determine the update interval in milliseconds, at which raw data should be shared. If the returned value is zero, the runtime object will not be instantiated. Otherwise, Skydel will proceed to call the `createRuntimeRawDataObserver` method from each plug-in to obtain a `SkydelRuntimeRawDataObserver*`. Ownership of the returned pointer must be fully transferred to Skydel. This creation function also provides a map from IDs to strings, listing all enabled constellations and their corresponding signals.
 
-During simulation, Skydel will send raw data at 1 Hz via the `pushRawData` method for every signal of every space vehicle of every constellation that is currently being simulated with the following data structure:
+During the simulation, Skydel will invoke the `pushRawData` method at the configured interval. This is done for every signal of every space vehicle in each simulated constellation, using the following data structure:
 
 | TimedRawData  | Definition                | Unit                             |
 | ------------- | ------------------------- | -------------------------------- |
@@ -22,10 +22,12 @@ During simulation, Skydel will send raw data at 1 Hz via the `pushRawData` metho
 | id                   | Constellation identifier  | -                     |
 | svs                  | Raw data by space vehicle | vector of `SVRawData` |
 
-| SVRawData | Definition         | Unit                      |
-| --------- | ------------------ | ------------------------- |
-| id        | Signal identifier  | -                         |
-| rawDatas  | Raw data by signal | vector of `SignalRawData` |
+| SVRawData                | Definition                                                 | Unit                      |
+| ------------------------ | ---------------------------------------------------------- | ------------------------- |
+| id                       | Signal identifier                                          | -                         |
+| receiverAntennaAzimuth   | Satellite’s azimuth from the receiver’s antenna position   | radian                    |
+| receiverAntennaElevation | Satellite’s elevation from the receiver’s antenna position | radian                    |
+| rawDatas                 | Raw data by signal                                         | vector of `SignalRawData` |
 
 
 
@@ -42,12 +44,10 @@ During simulation, Skydel will send raw data at 1 Hz via the `pushRawData` metho
 | clockCorrection             | Satellite's Clock Correction                                                                                                                                             | second          |
 | clockNoise                  | Additional clock error not accounted for in navigation message                                                                                                           | second          |
 | deltaAf0                    | Clock offset                                                                                                                                                             | second          |
-| deltaAf1                    | Clock drift                                                                                                                                                              | second/second   |
+| deltaAf1                    | Clock drift&#xD;                                                                                                                                                         | second/second   |
 | ionoCorrection              | Ionospheric corrections                                                                                                                                                  | meter           |
 | tropoCorrection             | Tropospheric corrections                                                                                                                                                 | meter           |
 | psrOffset                   | Pseudorange offset                                                                                                                                                       | meter           |
-| receiverAntennaAzimuth      | Satellite’s azimuth from the receiver’s antenna position                                                                                                                 | radian          |
-| receiverAntennaElevation    | Satellite’s elevation from the receiver’s antenna position                                                                                                               | radian          |
 | receiverAntennaGain         | Receiver’s antenna gain                                                                                                                                                  | dBi             |
 | svAntennaAzimuth            | Receiver’s azimuth from the satellite’s antenna position                                                                                                                 | radian          |
 | svAntennaElevation          | Receiver’s elevation from the satellite’s antenna position                                                                                                               | radian          |
