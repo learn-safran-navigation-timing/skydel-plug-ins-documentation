@@ -76,36 +76,72 @@ git --version
 
 </details>
 
-## Qt
+## Perl
 
-Download the latest [online installer](https://download.qt.io/official_releases/online_installers/) named _qt-unified-windows-x64-online.exe_ and install:
-
-{% code title="From an elevated PowerShell" %}
-```powershell
-.\qt-online-installer-windows-x64-4.8.1.exe install qt.qt5.5152.win64_msvc2019_64 qt.tools.qtcreator `
-    --root C:\Qt `
-    --auto-answer telemetry-question=No --accept-licenses --default-answer --accept-obligations --confirm-command `
-    --email QT_EMAIL `
-    --pw QT_PW
-```
-{% endcode %}
-
-{% hint style="info" %}
-Please note that the version in the installer file name might change on newer versions.
-{% endhint %}
-
-{% hint style="info" %}
-Update the email (_QT\_EMAIL_) and password (_QT\_PW_) accordingly
-{% endhint %}
+Download and install latest [Perl](https://github.com/StrawberryPerl/Perl-Dist-Strawberry/releases/download/SP_54021_64bit_UCRT/strawberry-perl-5.40.2.1-64bit.msi), needed for Qt compilation.
 
 <details>
 
-<summary>Version should be 5.15.2 for <code>Qt</code></summary>
+<summary>Version should at least be 5.40.2.1 for <code>perl</code></summary>
 
 ```
-C:\Qt\5.15.2\msvc2019_64\bin\qmake --version
+perl -v
+> This is perl 5, version 40, subversion 2 (v5.40.2) built for MSWin32-x64-multi-thread
+```
+
+</details>
+
+## QtCreator
+
+Follow the instructions below to setup the QtCreator IDE:
+
+1. Download [qtcreator-windows-x64-msvc-10.0.1.7z](https://github.com/qt-creator/qt-creator/releases/download/v10.0.1/qtcreator-windows-x64-msvc-10.0.1.7z) and unzip to **C:\Qt\QtCreator**
+2. Download [qtcreatorcdbext-windows-x64-msvc-10.0.1.7z](https://github.com/qt-creator/qt-creator/releases/download/v10.0.1/qtcreatorcdbext-windows-x64-msvc-10.0.1.7z) and unzip to **C:\Qt\QtCreator** such that you have **C:\Qt\QtCreator\lib\qtcreatorcdbext64**
+3. Optional: To make accessing Qt Creator easier, navigate to **C:\Qt\QtCreator\bin** and launch **qtcreator.exe**. It may take some time to open the first time. Once it's open, you can pin the application to the taskbar for quicker access in the future.
+
+## OpenSSL
+
+Since OpenSSL is required for Qt compilation, follow the instructions below to compile and install it:
+
+{% code title="From an elevated Command Prompt" %}
+```
+powershell -Command "Invoke-WebRequest -Uri 'https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1w/openssl-1.1.1w.tar.gz' -OutFile 'C:\'"
+cd /d "C:\"
+tar -xzf "openssl-1.1.1w.tar.gz"
+del "openssl-1.1.1w.tar.gz"
+cd openssl-1.1.1w
+call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+perl Configure VC-WIN64A
+nmake
+```
+{% endcode %}
+
+## Qt
+
+Once you've completed all the steps in the sections above, compile and install Qt using the following command:
+
+{% code title="From an elevated Command Prompt" %}
+```
+cd /d "C:\"
+git clone --branch v5.15.17-lts-lgpl --single-branch https://github.com/qt/qt5
+cd qt5
+perl init-repository --module-subset="qtbase,qtsvg,qtserialport"
+call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+set CL=/MP
+configure -prefix C:\Qt\5.15.17\msvc2019_64 -opensource -nomake tests -nomake examples -openssl-linked -I C:\openssl-1.1.1w\include -L C:\openssl-1.1.1w OPENSSL_LIBS="-lWs2_32 -lGdi32 -lAdvapi32 -lCrypt32 -lUser32 -llibssl_static -llibcrypto_static"
+nmake
+nmake install
+```
+{% endcode %}
+
+<details>
+
+<summary>Version should be 5.15.17 for <code>Qt</code></summary>
+
+```
+C:\Qt\5.15.17\msvc2019_64\bin\qmake --version
 > QMake version 3.1
-> Using Qt version 5.15.2 in C:/Qt/5.15.2/msvc2019_64/lib
+> Using Qt version 5.15.17 in C:/Qt/5.15.17/msvc2019_64/lib
 ```
 
 </details>

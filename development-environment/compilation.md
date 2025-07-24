@@ -14,11 +14,15 @@ In Qt Creator, open the **CMakeLists.txt** file from the root folder:
 
 {% tabs %}
 {% tab title="Ubuntu" %}
-<img src="../.gitbook/assets/file.drawing.svg" alt="" class="gitbook-drawing">
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Windows" %}
-<img src="../.gitbook/assets/file.drawing (1).svg" alt="" class="gitbook-drawing">
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
@@ -26,11 +30,12 @@ In Qt Creator, open the **CMakeLists.txt** file from the root folder:
 
 {% tabs %}
 {% tab title="Ubuntu" %}
-<pre><code>mkdir build &#x26;&#x26; cd build
+```
+mkdir build && cd build
 cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
-<strong>cmake --build .
-</strong><strong>sudo cmake --install .
-</strong></code></pre>
+cmake --build .
+sudo cmake --install .
+```
 {% endtab %}
 
 {% tab title="Windows" %}

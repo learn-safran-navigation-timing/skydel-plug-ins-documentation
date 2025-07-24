@@ -18,4 +18,4 @@ Make sure you copy the plug-in (_.so_ or _.dll_ file) into the _Skydel Data Fold
 
 Go to _Help / Plug-ins..._ to enable/disable any available plug-in.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Skydel Plug-ins Dialog</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Skydel Plug-ins Dialog</p></figcaption></figure>
