@@ -28,15 +28,15 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.
 
 ## CMake
 
-Download and install [CMake](https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1-windows-x86_64.msi). Make sure to add CMake to the system PATH during installation.
+Download and install [CMake](https://github.com/Kitware/CMake/releases/download/v4.0.3/cmake-4.0.3-windows-x86_64.msi). Make sure to add CMake to the system PATH during installation.
 
 <details>
 
-<summary>Version should be 3.22.1 for <code>cmake</code></summary>
+<summary>Version should be 4.0.3 for <code>cmake</code></summary>
 
 ```
 cmake --version
-> cmake version 3.22.1
+> cmake version 4.0.3
 ```
 
 </details>

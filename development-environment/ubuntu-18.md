@@ -9,10 +9,11 @@ description: >-
 ## Updates & Packages
 
 ```
-sudo sed -i "s/# deb-src/deb-src/" /etc/apt/sources.list
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 uuid-dev git cmake ninja-build
+sudo apt install build-essential libgl1-mesa-dev libxcb-xinerama0 uuid-dev git ninja-build
+
+wget -qO- https://github.com/Kitware/CMake/releases/download/v4.0.3/cmake-4.0.3-linux-x86_64.tar.gz | tar -xz && sudo cp -r cmake-4.0.3-linux-x86_64/* /usr/ && rm -rf cmake-4.0.3-linux-x86_64
 ```
 
 <details>
@@ -49,11 +50,11 @@ g++ --version
 
 <details>
 
-<summary>Version should be 3.22.1 for <code>cmake</code></summary>
+<summary>Version should be 4.0.3 for <code>cmake</code></summary>
 
 ```
 cmake --version
-> cmake version 3.22.1
+> cmake version 4.0.3
 ```
 
 </details>
