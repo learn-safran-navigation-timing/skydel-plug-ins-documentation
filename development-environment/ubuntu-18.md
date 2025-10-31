@@ -89,8 +89,9 @@ readonly QT5_TMP=$TMP/Qt5
 sudo apt --yes build-dep qtbase5-dev
 
 mkdir --parents "$QT5_TMP"
-wget -qO- "https://download.qt.io/official_releases/qt/${QT5_VERSION%.*}/${QT5_VERSION}/submodules/qtbase-everywhere-opensource-src-${QT5_VERSION}.tar.xz" | tar -xJvC "$QT5_TMP"
-cd "$QT5_TMP"/qtbase-everywhere-src*
+cd "$QT5_TMP"
+git clone --branch v"$QT5_VERSION"-lts-lgpl --single-branch https://github.com/qt/qtbase
+cd qtbase
 
 sed -i "0,/#ifdef __cplusplus/!b;//a#  include <limits>" src/corelib/global/qglobal.h
 
@@ -100,14 +101,16 @@ sed -i "s|^\([[:space:]]*\)out\.d_func()->fileEngine->syncToDisk();|\1d->fileEng
 make --jobs="$(nproc)"
 sudo make install
 
-wget -qO- "https://download.qt.io/official_releases/qt/${QT5_VERSION%.*}/${QT5_VERSION}/submodules/qtserialport-everywhere-opensource-src-${QT5_VERSION}.tar.xz" | tar -xJvC "$QT5_TMP"
-cd "$QT5_TMP"/qtserialport-everywhere-src*
+cd ..
+git clone --branch v"$QT5_VERSION"-lts-lgpl --single-branch https://github.com/qt/qtserialport
+cd qtserialport
 "$QT5_PREFIX"/bin/qmake
 make --jobs="$(nproc)"
 sudo make install
 
-wget -qO- "https://download.qt.io/official_releases/qt/${QT5_VERSION%.*}/${QT5_VERSION}/submodules/qtsvg-everywhere-opensource-src-${QT5_VERSION}.tar.xz" | tar -xJvC "$QT5_TMP"
-cd "$QT5_TMP"/qtsvg-everywhere-src*
+cd ..
+git clone --branch v"$QT5_VERSION"-lts-lgpl --single-branch https://github.com/qt/qtsvg
+cd qtsvg
 "$QT5_PREFIX"/bin/qmake
 make --jobs="$(nproc)"
 sudo make install
