@@ -24,7 +24,7 @@ During the simulation, Skydel will invoke the `pushRawData` method at the config
 
 | SVRawData                | Definition                                                 | Unit                      |
 | ------------------------ | ---------------------------------------------------------- | ------------------------- |
-| id                       | Signal identifier                                          | -                         |
+| id                       | Space vehicle identifier                                   | -                         |
 | receiverAntennaAzimuth   | Satellite’s azimuth from the receiver’s antenna position   | radian                    |
 | receiverAntennaElevation | Satellite’s elevation from the receiver’s antenna position | radian                    |
 | rawDatas                 | Raw data by signal                                         | vector of `SignalRawData` |
@@ -33,7 +33,7 @@ During the simulation, Skydel will invoke the `pushRawData` method at the config
 
 | SignalRawData               | Definition                                                                                                                                                               | Unit            |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- |
-| id                          | Space vehicle identifier                                                                                                                                                 | -               |
+| id                          | Signal identifier                                                                                                                                                        | -               |
 | svElapsedTimeMs             | Elapsed time of the SV at current simulation elapsed time                                                                                                                | millisecond     |
 | position (x,y,z)            | ECEF coordinates (meters) of the origin of the transmitted signal (satellite’s antenna phase center).                                                                    | meter           |
 | positionError (x,y,z)       | Error on the position                                                                                                                                                    | meter           |
