@@ -100,6 +100,16 @@ The _FDMA_ element is optional. As an example, see [Glonass G1](https://github.c
 
 <table><thead><tr><th width="240">Parameter</th><th>Definition</th></tr></thead><tbody><tr><td>ChannelOffset</td><td>The frequency offset in hertz between channels (SV IDs). This value will be multiplied by the given channel assignation for an SV ID.</td></tr><tr><td>Channels</td><td>Integer assignations for each channel. Requires as many channels as available SV IDs in the signal's constellation.</td></tr></tbody></table>
 
+### FrequencyHopping
+
+The _FrequencyHopping_ element is optional.
+
+<table><thead><tr><th width="247">Parameter</th><th>Definition</th></tr></thead><tbody><tr><td>HopPeriod</td><td>Duration in milliseconds between 2 hops.</td></tr><tr><td>FrequencyStep</td><td>The frequency offset in hertz to be multiplied to a frequency bin.</td></tr><tr><td>BinsSequencesAssignations</td><td>List of <em>BinsSequenceAssignation.</em></td></tr></tbody></table>
+
+### BinsSequenceAssignation
+
+<table><thead><tr><th width="252">Parameter</th><th>Definition</th></tr></thead><tbody><tr><td>SVS</td><td>An array of SV IDs using the following sequence.</td></tr><tr><td>BinsSequence</td><td>An array of integer numbers representing the multiplicative coefficient of the frequency step.</td></tr></tbody></table>
+
 ### GPS CA Example
 
 Here's a digest of the [GPS CA](https://github.com/learn-safran-navigation-timing/skydel-example-plugins/blob/master/source/custom_signals/example_gps_ca/custom_ca.xml) custom signal example XML file.
